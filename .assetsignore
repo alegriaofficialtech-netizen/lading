@@ -1,0 +1,15 @@
+# Archivos que NO deben publicarse como assets del sitio.
+# El .gitignore de desarrollo ya excluye esto del control de versiones,
+# pero Cloudflare sirve el directorio de trabajo tal cual.
+
+.git
+.gitignore
+.assetsignore
+wrangler.jsonc
+
+# Documentacion interna de trabajo, no es parte del sitio publico.
+odd
+
+# Utilidades de desarrollo local, no son assets del sitio.
+server.py
+crop.py
