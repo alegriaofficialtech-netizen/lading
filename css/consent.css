@@ -1,0 +1,171 @@
+/* ================================================================
+   ALEGRIA — Banner de consentimiento
+   ---------------------------------------------------------------
+   Todo el color, la tipografia y el radio salen de los tokens de
+   :root en css/styles_v2.css (--orange, --green-darker, --font-*, etc).
+   Este archivo no redefine ningun token global: solo los consume.
+
+   Se carga DESPUES de los estilos de la pagina, asi que sus reglas
+   ganan en caso de empate. Aun asi todo va debajo de .consent-banner
+   para no filtrar estilo al resto del documento.
+
+   Ubicacion: abajo a la IZQUIERDA en escritorio. A la derecha ya viven
+   la caja flotante de WhatsApp (.floating-wa, bottom/right 30px) y el
+   boton "volver arriba" (.btt, mismo esquina), asi que el aviso se
+   ancla al lado contrario y nunca los tapa. En <=768px la caja de
+   WhatsApp se oculta por CSS, y ahi el aviso si ocupa todo el ancho.
+   ================================================================ */
+
+.consent-banner {
+  /* Plus Jakarta Sans solo se carga en algunas paginas del sitio; donde
+     no esta, caemos en Inter, que si esta en las 10. De ahi la cadena. */
+  --consent-font: 'Plus Jakarta Sans', var(--font-secondary);
+
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  /* Por encima del header fijo (z-index 1000) y por debajo del toast y
+     el lightbox (9999), para no competir con ellos. */
+  z-index: 2000;
+  width: min(560px, calc(100vw - 48px));
+  background: var(--green-darker);
+  color: var(--border);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 16px;
+  box-shadow: 0 18px 45px rgba(5, 20, 14, 0.35);
+  font-family: var(--consent-font);
+  line-height: 1.6;
+  animation: consent-rise 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* El contenedor recibe el foco al abrir: se anuncia el dialogo y el
+   usuario sigue tabulando hasta los botones. No hay foco precargado
+   en "Aceptar", para no decidir por el visitante con un Enter sin querer. */
+.consent-banner:focus {
+  outline: none;
+}
+.consent-banner:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+@keyframes consent-rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.consent-banner__inner {
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.consent-banner__text {
+  margin: 0;
+  font-size: 14px;
+  color: var(--border);
+}
+
+.consent-banner__link {
+  color: var(--orange);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.3s ease;
+}
+.consent-banner__link:hover {
+  color: var(--orange-hover);
+}
+.consent-banner__link:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.consent-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.consent-banner__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: var(--consent-font);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Aceptar: el naranja de marca. Sobre el panel verde oscuro el texto va
+   en --green-darker, porque blanco sobre #F59E0B no alcanza contraste. */
+.consent-banner__btn--accept {
+  background: var(--orange);
+  border: 1px solid var(--orange);
+  color: var(--green-darker);
+}
+.consent-banner__btn--accept:hover {
+  background: var(--orange-hover);
+  border-color: var(--orange-hover);
+  transform: translateY(-2px);
+}
+
+/* Rechazar: mismo peso visual, ninguna sombra de "no me dejes pasar". */
+.consent-banner__btn--reject {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: var(--white);
+}
+.consent-banner__btn--reject:hover {
+  border-color: var(--white);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.consent-banner__btn:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* ── Movil ───────────────────────────────────────────────────
+   <=768px es justo el punto en que styles_v2.css oculta .floating-wa,
+   asi que el aviso puede ocupar el ancho completo sin tapar nada. */
+@media (max-width: 768px) {
+  .consent-banner {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  }
+  .consent-banner__inner {
+    padding: 20px;
+  }
+  .consent-banner__actions {
+    flex-direction: column;
+  }
+  .consent-banner__btn {
+    width: 100%;
+  }
+}
+
+/* Mismo criterio que styles_v2.css: sin animaciones si el sistema pide. */
+@media (prefers-reduced-motion: reduce) {
+  .consent-banner,
+  .consent-banner__btn,
+  .consent-banner__link {
+    animation: none !important;
+    transition: none !important;
+  }
+  .consent-banner__btn--accept:hover {
+    transform: none;
+  }
+}

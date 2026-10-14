@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Política de Privacidad | ALEGRIA</title>
+  <meta name="description" content="Qué datos recogemos en alegriatecn.com, cómo usamos Google Analytics solo con tu consentimiento y cómo cambiar esa decisión cuando quieras."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/styles_v2.css?v=32"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><polygon points='6,18 10,4 16,16' fill='%23F59E0B'/><polygon points='24,16 30,4 34,18' fill='%23F59E0B'/><circle cx='20' cy='22' r='14' fill='%23F59E0B'/><path d='M7.5 28 Q20 38 32.5 28 L30 32 Q20 40 10 32 Z' fill='%23DC2626'/><circle cx='20' cy='33' r='3.5' fill='%23FBBF24'/><circle cx='14' cy='20' r='2.5' fill='%23111827'/><circle cx='26' cy='20' r='2.5' fill='%23111827'/><ellipse cx='20' cy='24' rx='1.5' ry='1' fill='%23111827'/></svg>"/>
+  <link rel="stylesheet" href="css/consent.css?v=1"/>
+  <style>
+    /* Estilos propios de esta pagina. Todo lo demas viene de styles_v2.css. */
+    .pv-main { padding: 132px 0 80px; }
+    .pv-wrap { max-width: 840px; margin: 0 auto; }
+
+    .pv-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      transition: color 0.3s ease;
+    }
+    .pv-back:hover { color: var(--green-dark); }
+
+    .pv-eyebrow {
+      display: inline-block;
+      font-family: var(--font-primary);
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+    }
+
+    .pv-intro { color: var(--text-muted); font-size: 16px; margin: 16px 0 8px; }
+    .pv-updated { font-size: 14px; color: var(--text-muted); margin-bottom: 8px; }
+
+    .pv-section {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .pv-section h2 { font-size: 24px; margin-bottom: 16px; }
+    .pv-section h3 { font-size: 17px; margin: 24px 0 8px; }
+    .pv-section p { color: var(--text-muted); margin-bottom: 14px; }
+    .pv-section ul { margin: 0 0 14px; padding-left: 22px; color: var(--text-muted); }
+    .pv-section li { margin-bottom: 8px; }
+    .pv-section a { color: var(--green-cta); text-decoration: underline; text-underline-offset: 3px; }
+    .pv-section a:hover { color: var(--green-cta-hover); }
+    .pv-section code {
+      font-size: 13px;
+      background: var(--bg-light);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1px 6px;
+    }
+
+    .pv-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 4px;
+      padding: 14px 28px;
+      border-radius: 8px;
+      background: var(--green-darker);
+      color: var(--white);
+      font-family: var(--font-primary);
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .pv-action:hover { background: var(--green-dark); }
+    .pv-action:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+
+    .pv-note {
+      margin-top: 20px;
+      padding: 20px 24px;
+      background: var(--orange-light);
+      border-left: 4px solid var(--orange);
+      border-radius: 8px;
+      color: var(--text-dark);
+      font-size: 14px;
+    }
+    .pv-note strong { font-family: var(--font-primary); }
+
+    /* El header de styles_v2.css colapsa el nav a un menu desplegable en
+       <=991px. Esta pagina no lleva boton de hamburguesa, asi que el nav
+       se mantiene en linea y simplemente envuelve. */
+    @media (max-width: 991px) {
+      .pv-main { padding: 120px 0 64px; }
+      .header-inner { flex-wrap: wrap; row-gap: 12px; }
+      .nav {
+        position: static;
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+        box-shadow: none;
+        background: transparent;
+      }
+      .nav-link { padding: 0; border-bottom: none; }
+      .nav-cta { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pv-back, .pv-action { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header" role="banner">
+  <div class="header-inner">
+    <a href="index.html" class="logo" aria-label="ALEGRIA inicio">
+      <div class="logo-box" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none" width="40" height="40">
+          <polygon points="6,18 10,4 16,16" fill="#F59E0B"/>
+          <polygon points="24,16 30,4 34,18" fill="#F59E0B"/>
+          <circle cx="20" cy="22" r="14" fill="#F59E0B"/>
+          <path d="M7.5 28 Q20 38 32.5 28 L30 32 Q20 40 10 32 Z" fill="#DC2626"/>
+          <circle cx="20" cy="33" r="3.5" fill="#FBBF24"/>
+          <circle cx="14" cy="20" r="2.5" fill="#111827"/>
+          <circle cx="26" cy="20" r="2.5" fill="#111827"/>
+          <circle cx="14.5" cy="19" r="1" fill="#fff"/>
+          <circle cx="26.5" cy="19" r="1" fill="#fff"/>
+          <ellipse cx="20" cy="24" rx="1.5" ry="1" fill="#111827"/>
+          <line x1="4" y1="20" x2="9" y2="21" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="3" y1="23" x2="9" y2="22" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="36" y1="20" x2="31" y2="21" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="37" y1="23" x2="31" y2="22" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M17 26 Q20 28 23 26" stroke="#111827" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <line x1="4" y1="22" x2="10" y2="23" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="4" y1="26" x2="10" y2="25" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="36" y1="22" x2="30" y2="23" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="36" y1="26" x2="30" y2="25" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="logo-name">ALEGRIA</span>
+    </a>
+
+    <nav class="nav" role="navigation" aria-label="Navegacion principal">
+      <a href="index.html#inicio" class="nav-link" data-s="inicio">Inicio</a>
+      <a href="index.html#servicios" class="nav-link" data-s="servicios">Servicios</a>
+      <a href="index.html#proyectos" class="nav-link" data-s="proyectos">Proyectos</a>
+      <a href="index.html#contacto" class="nav-link" data-s="contacto">Contacto</a>
+    </nav>
+
+    <a href="index.html" class="nav-cta">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+        <line x1="19" y1="12" x2="5" y2="12"/>
+        <polyline points="12 19 5 12 12 5"/>
+      </svg>
+      Volver al inicio
+    </a>
+  </div>
+</header>
+
+<main class="pv-main">
+  <div class="container">
+    <div class="pv-wrap">
+
+      <a href="index.html" class="pv-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true">
+          <line x1="19" y1="12" x2="5" y2="12"/>
+          <polyline points="12 19 5 12 12 5"/>
+        </svg>
+        Volver al inicio
+      </a>
+
+      <span class="pv-eyebrow">Legal</span>
+      <h1>Política de privacidad</h1>
+      <p class="pv-intro">Esta página explica qué datos recogemos en alegriatecn.com, por qué los recogemos y cómo puedes controlarlos. Es corta a propósito: si algo no queda claro, escríbenos y lo explicamos.</p>
+      <p class="pv-updated">Última actualización: octubre de 2026.</p>
+
+      <!-- Responsable -->
+      <section class="pv-section">
+        <h2>Quién responde por este sitio</h2>
+        <p>El responsable de este sitio es <strong>Alegria Tech</strong>, y opera el dominio <strong>alegriatecn.com</strong>. Cuando quieras ejercer cualquier derecho sobre tus datos, o simplemente resolver una duda, escríbenos y te respondemos:</p>
+        <ul>
+          <li>Correo: <a href="mailto:hola@alegriatech.com">hola@alegriatech.com</a></li>
+          <li>WhatsApp: <a href="https://wa.me/51939500067">+51 939 500 067</a></li>
+        </ul>
+        <p>Atendemos las solicitudes de acceso, rectificación, eliminación y oposición dentro de los plazos que fija la normativa aplicable.</p>
+      </section>
+
+      <!-- Analytics -->
+      <section class="pv-section">
+        <h2>Qué recoge Google Analytics</h2>
+        <p>Usamos <strong>Google Analytics 4</strong> para entender cómo se visita el sitio y mejorarlo. Solo recoge información agregada y nunca sobre personas concretas: no sabemos quién eres ni dónde estás con nombre y apellido.</p>
+        <p>Concretamente, registra datos como estos:</p>
+        <ul>
+          <li>Qué páginas se visitan y cuántas veces, en forma de recuento agregado.</li>
+          <li>Desde qué páginas se llega y hacia qué enlaces externos se sale.</li>
+          <li>Hasta qué punto se lee la página (por ejemplo, un 50 % de desplazamiento).</li>
+          <li>Información general del navegador y del dispositivo, como el tipo de navegador o el idioma.</li>
+        </ul>
+        <p>No usamos Google Analytics para publicidad, para perfiles de comportamiento ni para reconocer quién eres. Tampoco lo usamos para medir campañas de terceros.</p>
+        <div class="pv-note">
+          <strong>Lo más importante:</strong> nada de esto se recoge hasta que pulsas <em>Aceptar</em> en el aviso que aparece la primera vez que visitas el sitio. Si pulsas <em>Rechazar</em>, el archivo de Google ni siquiera se descarga. Mientras no hayas aceptado, la web funciona igual.
+        </div>
+      </section>
+
+      <!-- Cambio de decision -->
+      <section class="pv-section">
+        <h2>Cómo cambiar tu decisión</h2>
+        <p>Puedes cambiar de opinión cuando quieras. Pulsa el botón de abajo y el aviso aparecerá otra vez, con las dos opciones, para que elijas de nuevo.</p>
+        <p>
+          <button type="button" class="pv-action" data-consent-open>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18" aria-hidden="true">
+              <path d="M21 12a9 9 0 1 1-3-6.7"/>
+              <polyline points="21 3 21 9 15 9"/>
+            </svg>
+            Cambiar mi decisión
+          </button>
+        </p>
+        <p>Tu decisión se guarda en la memoria local de tu navegador y no la borramos desde nuestro lado.</p>
+        <p><strong>Un detalle honesto:</strong> si aceptas y más tarde rechazas, el archivo de Google ya se descargó en esa visita. El efecto de tu cambio se aplica completo a partir de la siguiente carga de página.</p>
+      </section>
+
+      <!-- Cookies y storage -->
+      <section class="pv-section">
+        <h2>Cookies y almacenamiento local</h2>
+        <p>Este sitio es muy ligero y no usa cookies publicitarias ni de seguimiento. Lo que sí usa es:</p>
+        <ul>
+          <li><code>alegria_consent_v1</code> — es el único dato que guardamos en el almacenamiento local de tu navegador. Contiene solo <code>granted</code> o <code>denied</code>, y sirve para no mostrarte el aviso en cada visita. Puedes borrarlo cuando quieras desde los ajustes de tu navegador.</li>
+          <li>El formulario de contacto y el de novedades los valida el navegador y te permite escribirnos por correo o WhatsApp. Si decides contactarnos, esos datos los trataríamos para responderte, y no se guardan en el sitio.</li>
+        </ul>
+        <p>Las tipografías del sitio se cargan desde Google Fonts, lo que significa que tu navegador hace una petición a los servidores de Google para obtener las letras. Esa petición no incluye identificadores de seguimiento de Google Analytics.</p>
+      </section>
+
+      <!-- Encargado -->
+      <section class="pv-section">
+        <h2>Google como encargado del tratamiento</h2>
+        <p>Cuando aceptas, los datos de navegación pasan a ser tratados por <strong>Google Ireland Limited</strong>, que actúa como encargado del tratamiento por cuenta de Alegria Tech, y está sujeto a las cláusulas de protección de datos que Google firma con sus clientes.</p>
+        <p>Google trata esa información siguiendo sus propias finalidades de seguridad y prevención de fraude, tal como se explica en su <a href="https://policies.google.com/privacy">política de privacidad</a>. Si aceptas, también puedes consultar la <a href="https://policies.google.com/technologies/partner-sites">documentación sobre el uso de Google Analytics en sitios de terceros</a>.</p>
+      </section>
+
+      <!-- Nota -->
+      <section class="pv-section">
+        <h2>Nota sobre este documento</h2>
+        <p>Si alguna vez actualizamos este texto, la fecha de arriba es la que manda.</p>
+        <div class="pv-note">
+          <strong>Este texto es un borrador técnico.</strong> Describe con precisión cómo funciona el sitio por dentro, pero no es asesoría legal. Antes de publicarlo como política definitiva, debería revisarlo quien asume las obligaciones legales de Alegria Tech en Perú, para confirmar que cubre todo lo que la normativa exige en tu caso.
+        </div>
+      </section>
+
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo" aria-label="Pie de pagina ALEGRIA">
+  <div class="container">
+    <div class="footer-bar">
+      <p class="f-copy">&copy; 2024 <span>Alegria Tech</span>. Todos los derechos reservados.</p>
+      <div class="f-policy">
+        <a href="privacidad.html">Política de privacidad</a>
+        <a href="index.html">Volver al inicio</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="btt" id="btt" aria-label="Volver al inicio">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
+<script src="js/script.js" defer></script>
+<script src="js/consent.js" defer></script>
+
+<!-- Floating WhatsApp box -->
+<div class="floating-wa" id="waBox">
+  <button class="wa-close" onclick="document.getElementById('waBox').style.display='none'">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="https://wa.me/51939500067?text=Hola, quiero informacion sobre sus servicios" class="wa-link" aria-label="Contactar por WhatsApp">
+    <div class="wa-icon">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    </div>
+    <div class="wa-text">
+      <h5>¿Hablamos?</h5>
+      <p>Cuéntanos tu proyecto y te asesoramos sin compromiso.</p>
+      <span>Escríbenos por WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+    </div>
+  </a>
+</div>
+
+</body>
+</html>
