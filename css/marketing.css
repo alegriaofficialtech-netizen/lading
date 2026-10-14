@@ -512,6 +512,7 @@
       width: 4px; height: 4px; border-radius: 50%; background: var(--ia-yellow); opacity: 0.5;
     }
     
+    .ia-benefit-card h3,
     .ia-benefit-card h4 { font-size: 17px; font-weight: 800; margin-bottom: 12px; color: var(--ia-dark); }
     .ia-benefit-card .ib-line { width: 24px; height: 2px; background: var(--ia-yellow-dark); margin: 0 auto 16px; border-radius: 2px; }
     .ia-benefit-card p { font-size: 13px; color: var(--ia-gray); line-height: 1.6; font-weight: 500; }
@@ -562,6 +563,7 @@
       width: 4px; height: 4px; border-radius: 50%; background: var(--ia-yellow); opacity: 0.5;
     }
     
+    .ia-sol-card h3,
     .ia-sol-card h4 { font-size: 15px; font-weight: 800; margin-bottom: 12px; color: var(--ia-dark); line-height: 1.3; }
     .ia-sol-card p { font-size: 12px; color: var(--ia-gray); line-height: 1.6; font-weight: 500; }
 
@@ -746,6 +748,7 @@
       z-index: 4;
     }
     
+    .ia-process-card h3,
     .ia-process-card h4 { font-size: 16px; font-weight: 800; margin-bottom: 12px; color: #0f172a; line-height: 1.3; }
     .ia-process-card p { font-size: 12px; color: var(--ia-gray); line-height: 1.5; font-weight: 500; padding: 0 5px; }
     
@@ -805,6 +808,7 @@
       position: absolute; top: -22px; left: 20px; border: 3px solid var(--ia-white);
     }
     .ia-case-icon svg { width: 22px; height: 22px; stroke-width: 2; }
+    .ia-case-body h3,
     .ia-case-body h4 { font-size: 15px; font-weight: 800; color: #0f172a; margin-bottom: 10px; line-height: 1.3; }
     .ic-line { width: 20px; height: 3px; background: var(--ia-yellow); margin-bottom: 14px; }
     .ia-case-body p { font-size: 12px; color: var(--ia-gray); line-height: 1.6; font-weight: 500; }
