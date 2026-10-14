@@ -4,7 +4,7 @@
   // El proyecto sirve HTML/CSS/JS puro desde la raiz del repositorio:
   // no hay paso de build, no hay dependencias, no hay framework.
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "alegria",
+  "name": "lading",
   "compatibility_date": "2026-10-14",
   "assets": {
     "directory": "./"
