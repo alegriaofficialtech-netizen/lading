@@ -685,7 +685,6 @@ body {
 
 /* Floating WhatsApp (Mocked visually) */
 @media (max-width: 1024px) {
-@media (max-width: 1024px) {
   .iiot-hero-container {
     grid-template-columns: 1fr;
     gap: 40px;
