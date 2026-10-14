@@ -734,15 +734,33 @@ body.landing-page {
   border-bottom: none;
 }
 .lw-faq-question {
+  /* La pregunta es un <button> real: se neutraliza el estilo por defecto
+     del navegador (fondo, borde y fuente del boton) y se recupera el ancho
+     completo que antes daba el div. */
+  width: 100%;
   padding: 16px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  font-family: inherit;
   font-weight: 700;
   font-size: 14px;
+  line-height: inherit;
+  color: inherit;
+  text-align: left;
+  background: none;
+  border: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
   cursor: pointer;
   user-select: none;
+}
+.lw-faq-question:focus-visible {
+  outline: 2px solid var(--lw-gold-light);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 .lw-faq-toggle {
   flex-shrink: 0;

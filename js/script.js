@@ -220,8 +220,12 @@
     items.forEach(function (item) {
       var q = item.querySelector('.lw-faq-question');
       if (!q) return;
+      // La pregunta es un <button>: Enter y Espacio ya disparan 'click' de
+      // forma nativa, asi que basta con reflejar el estado en aria-expanded.
+      q.setAttribute('aria-expanded', item.classList.contains('open') ? 'true' : 'false');
       q.addEventListener('click', function () {
-        item.classList.toggle('open');
+        var open = item.classList.toggle('open');
+        q.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
     });
   }
