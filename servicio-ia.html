@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inteligencia Artificial | ALEGRIA</title>
+  <meta name="description" content="Implementamos soluciones con machine learning, automatización inteligente y modelos orientados a resolver necesidades reales de tu negocio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles_v2.css?v=32">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><polygon points='6,18 10,4 16,16' fill='%23F59E0B'/><polygon points='24,16 30,4 34,18' fill='%23F59E0B'/><circle cx='20' cy='22' r='14' fill='%23F59E0B'/><path d='M7.5 28 Q20 38 32.5 28 L30 32 Q20 40 10 32 Z' fill='%23DC2626'/><circle cx='20' cy='33' r='3.5' fill='%23FBBF24'/><circle cx='14' cy='20' r='2.5' fill='%23111827'/><circle cx='26' cy='20' r='2.5' fill='%23111827'/></svg>">
+  <style>
+    /* ===============================
+       IA PAGE — CSS (IDENTICAL TO MOCKUP)
+       =============================== */
+    :root {
+      --ia-yellow: #FACC15;
+      --ia-yellow-dark: #F59E0B;
+      --ia-dark: #111827;
+      --ia-gray: #64748B;
+      --ia-light-gray: #94A3B8;
+      --ia-bg: #FAFAF9;
+      --ia-white: #FFFFFF;
+      --ia-border: #E2E8F0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body.ia-page {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      background-color: var(--ia-bg);
+      color: var(--ia-dark);
+    }
+
+    /* ---- BREADCRUMB ---- */
+    .ia-breadcrumb {
+      font-size: 13px;
+      color: var(--ia-light-gray);
+      padding: 18px 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ia-breadcrumb a { color: var(--ia-light-gray); text-decoration: none; }
+    .ia-breadcrumb a:hover { color: var(--ia-dark); }
+    .ia-breadcrumb .sep { color: var(--ia-border); font-size: 10px; }
+    .ia-breadcrumb .active-crumb { color: var(--ia-yellow-dark); font-weight: 600; }
+
+    /* ---- HERO WRAPPER ---- */
+    .ia-hero-wrapper {
+      background-color: #ffffff;
+      padding: 40px 5% 0;
+      min-height: 82vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Subtle circular background glow */
+    .ia-hero-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 30%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(250,204,21,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ---- HERO GRID ---- */
+    .ia-hero-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 340px 1fr 340px;
+      gap: 0;
+      flex: 1;
+      align-items: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* ---- LEFT COLUMN ---- */
+    .ia-left {
+      padding: 60px 0 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .ia-servicio-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--ia-white);
+      border: 1px solid var(--ia-border);
+      border-radius: 30px;
+      padding: 7px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--ia-dark);
+      margin-bottom: 28px;
+      width: fit-content;
+    }
+    .ia-servicio-badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--ia-yellow-dark);
+    }
+
+    .ia-main-title {
+      font-size: 70px;
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -2px;
+      margin-bottom: 28px;
+    }
+    .ia-main-title .line1 { color: var(--ia-dark); display: block; }
+    .ia-main-title .line2 { color: var(--ia-yellow-dark); display: block; }
+
+    .ia-title-divider {
+      width: 50px;
+      height: 3px;
+      background-color: var(--ia-yellow-dark);
+      border-radius: 2px;
+      margin-bottom: 24px;
+    }
+
+    .ia-main-desc {
+      font-size: 16px;
+      color: var(--ia-gray);
+      line-height: 1.65;
+      margin-bottom: 36px;
+      font-weight: 400;
+      max-width: 300px;
+    }
+
+    /* Feature points */
+    .ia-features-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+    .ia-feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .ia-feature-item .fi-icon {
+      width: 36px;
+      height: 36px;
+      background-color: rgba(250,204,21,0.12);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ia-yellow-dark);
+    }
+    .ia-feature-item .fi-icon svg { width: 18px; height: 18px; }
+    .ia-feature-item .fi-label {
+      font-size: 12px;
+      color: var(--ia-dark);
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    .ia-feature-item .fi-sub {
+      font-size: 11px;
+      color: var(--ia-light-gray);
+      font-weight: 400;
+      margin-top: -4px;
+    }
+
+    /* Buttons */
+    .ia-btns-row {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+    .ia-btn-primary {
+      background-color: var(--ia-yellow-dark);
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 15px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 20px rgba(245,158,11,0.35);
+    }
+    .ia-btn-primary:hover { background-color: #d97706; transform: translateY(-2px); }
+    .ia-btn-secondary {
+      background-color: var(--ia-white);
+      color: var(--ia-dark);
+      font-size: 15px;
+      font-weight: 600;
+      padding: 15px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+      border: 1px solid var(--ia-border);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .ia-btn-secondary:hover { border-color: #94a3b8; background-color: #f8fafc; }
+
+    /* ---- CENTER COLUMN (Brain Image) ---- */
+    .ia-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: 100%;
+      min-height: 500px;
+    }
+
+    .brain-container {
+      width: 100%;
+      max-width: 520px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .brain-glow-ring {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 120%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(250,204,21,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .ia-brain-img {
+      width: 100%;
+      max-width: 450px;
+      object-fit: contain;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 15px 40px rgba(245, 158, 11, 0.25));
+    }
+
+    /* Network lines on brain */
+    .brain-svg-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      opacity: 0.5;
+    }
+
+    /* ---- RIGHT COLUMN (Floating Cards) ---- */
+    .ia-right {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 30px 0 30px 20px;
+    }
+
+    .ia-card {
+      background-color: var(--ia-white);
+      border-radius: 16px;
+      padding: 18px 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    /* Card 1: Rendimiento del modelo */
+    .ia-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .ia-card-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ia-dark);
+    }
+    .ia-card-badge {
+      font-size: 10px;
+      color: var(--ia-light-gray);
+      background-color: var(--ia-white);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 6px;
+      padding: 4px 8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .ia-metric-big {
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--ia-yellow-dark);
+      line-height: 1;
+    }
+    .ia-metric-sub {
+      font-size: 11px;
+      color: var(--ia-light-gray);
+      margin-bottom: 12px;
+    }
+
+    /* Mini sparkline chart */
+    .ia-sparkline {
+      width: 100%;
+      height: 50px;
+      position: relative;
+    }
+    .ia-sparkline svg { width: 100%; height: 100%; }
+    .ia-chart-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      color: var(--ia-light-gray);
+      margin-top: 4px;
+    }
+
+    /* Card 2: Analisis predictivo / donut */
+    .ia-donut-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 10px;
+    }
+    .ia-donut-wrap {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      flex-shrink: 0;
+    }
+    .ia-donut-wrap svg {
+      width: 80px;
+      height: 80px;
+      transform: rotate(-90deg);
+    }
+    .ia-donut-center {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .ia-donut-center strong { font-size: 17px; font-weight: 800; color: var(--ia-dark); display: block; line-height: 1.1; }
+    .ia-donut-center span { font-size: 9px; color: var(--ia-light-gray); display: block; }
+    .ia-legend { display: flex; flex-direction: column; gap: 7px; flex: 1; }
+    .ia-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      color: var(--ia-dark);
+    }
+    .ia-legend-dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .ia-legend-pct { margin-left: auto; font-weight: 700; font-size: 12px; }
+
+    /* Card 3: Automatización de procesos */
+    .ia-auto-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 5px;
+    }
+    .ia-robot-box {
+      width: 90px;
+      height: 100px;
+      border-radius: 14px;
+      background-color: #f8fafc;
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ia-robot-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.1);
+    }
+    .ia-auto-stats { flex: 1; }
+    .ia-auto-label { font-size: 11px; color: var(--ia-light-gray); }
+    .ia-auto-pct { font-size: 26px; font-weight: 900; color: var(--ia-dark); line-height: 1; }
+    .ia-auto-sublabel { font-size: 11px; color: var(--ia-light-gray); }
+    .ia-progress-bar {
+      width: 100%;
+      height: 6px;
+      background-color: #f1f5f9;
+      border-radius: 4px;
+    }
+    .ia-progress-fill {
+      height: 100%;
+      width: 84%;
+      background: var(--ia-yellow-dark);
+      border-radius: 4px;
+    }
+    .ia-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--ia-border);
+      font-size: 11px;
+      color: var(--ia-light-gray);
+    }
+    .ia-badge-alta {
+      background-color: rgba(245,158,11,0.1);
+      color: var(--ia-yellow-dark);
+      border: 1px solid rgba(245,158,11,0.2);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* ---- BOTTOM STATS BAR ---- */
+    .ia-stats-bar {
+      background-color: var(--ia-white);
+      border-radius: 18px;
+      padding: 28px 50px;
+      margin: 20px auto 40px;
+      max-width: 1100px;
+      width: calc(100% - 10%);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+      position: relative;
+      z-index: 5;
+    }
+    .ia-stat-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .ia-stat-icon {
+      color: var(--ia-yellow-dark);
+    }
+    .ia-stat-icon svg { width: 28px; height: 28px; }
+    .ia-stat-val {
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--ia-dark);
+      display: block;
+      line-height: 1;
+    }
+    .ia-stat-label {
+      font-size: 11px;
+      color: var(--ia-light-gray);
+      display: block;
+      margin-top: 3px;
+    }
+    .ia-stat-divider {
+      width: 1px;
+      height: 40px;
+      background-color: var(--ia-border);
+    }
+
+    /* ---- SECTIONS BELOW HERO ---- */
+    .ia-section {
+      padding: 80px 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .ia-section-tag {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--ia-yellow-dark);
+      margin-bottom: 12px;
+    }
+    .ia-section-title {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--ia-dark);
+      margin-bottom: 50px;
+    }
+
+    /* Benefits Grid */
+    .ia-benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .ia-benefit-card {
+      background: var(--ia-white);
+      border: 1px solid var(--ia-border);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .ia-benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.07);
+    }
+    .ib-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: rgba(250,204,21,0.1);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--ia-yellow-dark);
+      margin-bottom: 18px;
+    }
+    .ib-icon svg { width: 24px; height: 24px; }
+    .ia-benefit-card h4 { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--ia-dark); }
+    .ia-benefit-card p { font-size: 13px; color: var(--ia-gray); line-height: 1.6; }
+
+    /* Solutions grid */
+    .ia-solutions-bg { background: #f8fafc; }
+    .ia-solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 15px;
+    }
+    .ia-sol-card {
+      background: var(--ia-white);
+      border: 1px solid var(--ia-border);
+      border-radius: 14px;
+      padding: 22px 18px;
+      transition: all 0.3s ease;
+    }
+    .ia-sol-card:hover {
+      border-color: var(--ia-yellow-dark);
+      box-shadow: 0 10px 30px rgba(245,158,11,0.1);
+    }
+    .is-icon { width: 38px; height: 38px; border-radius: 10px; background: rgba(250,204,21,0.1); display: flex; align-items: center; justify-content: center; color: var(--ia-yellow-dark); margin-bottom: 14px; }
+    .is-icon svg { width: 20px; height: 20px; }
+    .ia-sol-card h4 { font-size: 13px; font-weight: 700; margin-bottom: 8px; }
+    .ia-sol-card p { font-size: 11px; color: var(--ia-gray); line-height: 1.5; }
+
+    /* Tech & Cases */
+    .ia-tc-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+    .tc-head { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ia-light-gray); margin-bottom: 25px; }
+    .tc-logos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+    .tc-logo {
+      background: var(--ia-white);
+      border: 1px solid var(--ia-border);
+      border-radius: 10px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ia-dark);
+      transition: border-color 0.2s;
+    }
+    .tc-logo:hover { border-color: var(--ia-yellow-dark); }
+    .tc-logo img { width: 22px; height: 22px; }
+    .tc-desc { font-size: 13px; color: var(--ia-gray); margin-top: 18px; line-height: 1.6; }
+    .tc-cases-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .tc-case {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--ia-dark);
+      padding: 12px 0;
+      border-bottom: 1px solid var(--ia-border);
+    }
+    .tc-case:nth-last-child(-n+2) { border-bottom: none; }
+    .tc-case svg { color: var(--ia-yellow-dark); flex-shrink: 0; }
+
+    /* Projects */
+    .ia-projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+    .ia-proj-card {
+      background: var(--ia-white);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--ia-border);
+      transition: transform 0.3s ease;
+    }
+    .ia-proj-card:hover { transform: translateY(-5px); }
+    .ia-proj-img-wrap {
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      height: 220px;
+      background: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ia-proj-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .ia-proj-img.contain-img {
+      object-fit: contain;
+      padding: 15px;
+    }
+    .ia-proj-img-wrap:hover .ia-proj-img { transform: scale(1.03); }
+    .ia-proj-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(17, 24, 39, 0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-weight: 600;
+      font-size: 15px;
+      gap: 10px;
+    }
+    .ia-proj-overlay svg { width: 30px; height: 30px; }
+    .ia-proj-img-wrap:hover .ia-proj-overlay { opacity: 1; }
+    
+    /* Modal */
+    .ia-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0; top: 0; width: 100%; height: 100%;
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(5px);
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .ia-modal.show { display: flex; opacity: 1; }
+    .ia-modal-content {
+      max-width: 90%;
+      max-height: 90vh;
+      border-radius: 12px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);
+      transform: scale(0.95);
+      transition: transform 0.3s;
+      object-fit: contain;
+    }
+    .ia-modal.show .ia-modal-content { transform: scale(1); }
+    .ia-modal-close {
+      position: absolute;
+      top: 25px; right: 35px;
+      color: #cbd5e1;
+      font-size: 44px;
+      font-weight: 300;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.2s;
+    }
+    .ia-modal-close:hover { color: #fff; }
+    .ia-proj-body { padding: 22px; }
+    .ia-proj-body h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .ia-proj-body p { font-size: 13px; color: var(--ia-gray); line-height: 1.6; }
+
+    /* CTA Banner */
+    .ia-cta-banner {
+      background-color: var(--ia-yellow-dark);
+      border-radius: 20px;
+      padding: 40px 50px;
+      margin: 0 5% 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .ia-cta-left { display: flex; align-items: center; gap: 20px; }
+    .ia-cta-icon { width: 52px; height: 52px; background: rgba(255,255,255,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+    .ia-cta-icon svg { width: 26px; height: 26px; color: #fff; }
+    .ia-cta-text h3 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+    .ia-cta-text p { font-size: 14px; color: rgba(255,255,255,0.8); }
+    .ia-cta-btn {
+      background: #fff;
+      color: var(--ia-yellow-dark);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: all 0.25s;
+    }
+    .ia-cta-btn:hover { background: #fffbeb; }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .ia-hero-grid { grid-template-columns: 1fr 1fr; }
+      .ia-center { display: none; }
+      .ia-benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .ia-solutions-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .ia-hero-grid { grid-template-columns: 1fr; }
+      .ia-right { display: none; }
+      .ia-main-title { font-size: 50px; }
+      .ia-stats-bar { flex-wrap: wrap; gap: 20px; padding: 25px 30px; }
+      .ia-stat-divider { display: none; }
+      .ia-benefits-grid, .ia-solutions-grid, .ia-projects-grid, .ia-tc-wrapper { grid-template-columns: 1fr; }
+      .tc-logos { grid-template-columns: repeat(2, 1fr); }
+      .tc-cases-list { grid-template-columns: 1fr; }
+      .ia-cta-banner { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body class="ia-page">
+
+<!-- HEADER -->
+<header class="header" id="header" role="banner">
+  <div class="header-inner">
+    <a href="index.html#inicio" class="logo" aria-label="ALEGRIA inicio">
+      <div class="logo-box" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none" width="40" height="40">
+          <polygon points="6,18 10,4 16,16" fill="#F59E0B"/>
+          <polygon points="24,16 30,4 34,18" fill="#F59E0B"/>
+          <circle cx="20" cy="22" r="14" fill="#F59E0B"/>
+          <path d="M7.5 28 Q20 38 32.5 28 L30 32 Q20 40 10 32 Z" fill="#DC2626"/>
+          <circle cx="20" cy="33" r="3.5" fill="#FBBF24"/>
+          <circle cx="14" cy="20" r="2.5" fill="#111827"/>
+          <circle cx="26" cy="20" r="2.5" fill="#111827"/>
+          <circle cx="14.5" cy="19" r="1" fill="#fff"/>
+          <circle cx="26.5" cy="19" r="1" fill="#fff"/>
+          <ellipse cx="20" cy="24" rx="1.5" ry="1" fill="#111827"/>
+          <line x1="4" y1="20" x2="9" y2="21" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="3" y1="23" x2="9" y2="22" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="36" y1="20" x2="31" y2="21" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="37" y1="23" x2="31" y2="22" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M17 26 Q20 28 23 26" stroke="#111827" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="logo-name">ALEGRIA</span>
+    </a>
+
+    <nav class="nav" role="navigation" aria-label="Navegacion principal">
+      <a href="index.html#inicio" class="nav-link" data-s="inicio">Inicio</a>
+      <a href="index.html#servicios" class="nav-link active" data-s="servicios">Servicios</a>
+      <a href="index.html#proyectos" class="nav-link" data-s="proyectos">Proyectos</a>
+      <a href="index.html#contacto" class="nav-link" data-s="contacto">Contacto</a>
+    </nav>
+
+    <a href="index.html#contacto" class="nav-cta">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+      Hablemos
+    </a>
+  </div>
+</header>
+
+<main>
+  <!-- BREADCRUMB -->
+  <div class="ia-breadcrumb">
+    <a href="index.html">Inicio</a>
+    <span class="sep">›</span>
+    <a href="index.html#servicios">Servicios</a>
+    <span class="sep">›</span>
+    <span class="active-crumb">Inteligencia Artificial</span>
+  </div>
+
+  <!-- HERO WRAPPER -->
+  <div class="ia-hero-wrapper">
+    <div class="ia-hero-grid">
+
+      <!-- LEFT: Text content -->
+      <div class="ia-left">
+        <div class="ia-servicio-badge">
+          <span class="dot"></span> SERVICIO
+        </div>
+
+        <h1 class="ia-main-title">
+          <span class="line1">Inteligencia</span>
+          <span class="line2">Artificial</span>
+        </h1>
+
+        <div class="ia-title-divider"></div>
+
+        <p class="ia-main-desc">
+          Implementamos soluciones con machine learning, automatización inteligente y modelos orientados a resolver necesidades reales de tu negocio.
+        </p>
+
+        <!-- Feature points -->
+        <div class="ia-features-row">
+          <div class="ia-feature-item">
+            <div class="fi-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
+            </div>
+            <span class="fi-label">Decisiones</span>
+            <span class="fi-sub">basadas en datos</span>
+          </div>
+          <div class="ia-feature-item">
+            <div class="fi-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <span class="fi-label">Automatización</span>
+            <span class="fi-sub">inteligente</span>
+          </div>
+          <div class="ia-feature-item">
+            <div class="fi-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <span class="fi-label">Ventaja</span>
+            <span class="fi-sub">competitiva</span>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="ia-btns-row">
+          <a href="index.html#contacto" class="ia-btn-primary">
+            Cuéntanos tu proyecto
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#soluciones" class="ia-btn-secondary">
+            Ver soluciones
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- CENTER: Brain 3D Image -->
+      <div class="ia-center">
+        <div class="brain-container">
+          <div class="brain-glow-ring"></div>
+          <img 
+            src="images/ia-brain.png" 
+            alt="Cerebro IA 3D" 
+            class="ia-brain-img"
+          >
+        </div>
+      </div>
+
+      <!-- RIGHT: Floating dashboard cards -->
+      <div class="ia-right">
+
+        <!-- Card 1: Rendimiento del modelo -->
+        <div class="ia-card">
+          <div class="ia-card-header" style="justify-content: space-between;">
+            <span class="ia-card-title" style="white-space: nowrap;">Rendimiento del modelo</span>
+            <span class="ia-card-badge">Últimos 6 meses <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></span>
+          </div>
+          <div class="ia-metric-big" style="margin-top: 10px;">+38%</div>
+          <div class="ia-metric-sub">Mejora del rendimiento</div>
+          <div class="ia-sparkline">
+            <svg viewBox="0 0 260 50" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="sparkGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#F59E0B" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <polygon points="10,40 30,37 50,33 70,26 90,27 110,21 130,24 150,15 170,11 190,13 210,7 230,8 250,3 250,50 10,50" fill="url(#sparkGrad)"/>
+              <polyline points="10,40 30,37 50,33 70,26 90,27 110,21 130,24 150,15 170,11 190,13 210,7 230,8 250,3" fill="none" stroke="#F59E0B" stroke-width="1.5"/>
+              
+              <!-- Dots on points -->
+              <circle cx="10" cy="40" r="2.5" fill="#F59E0B" stroke="#fff" stroke-width="1"/>
+              <circle cx="30" cy="37" r="2.5" fill="#F59E0B" stroke="#fff" stroke-width="1"/>
+              <circle cx="50" cy="33" r="2.5" fill="#F59E0B" stroke="#fff" stroke-width="1"/>
+              <circle cx="70" cy="26" r="2.5" fill="#F59E0B" stroke="#fff" stroke-width="1"/>
+              <circle cx="90" cy="27" r="2.5" fill="#F59E0B" stroke="#fff" stroke-width="1"/>
+              <circle cx="110" cy="21" r="2.5" fill="#F59E0B" stroke="#fff" stroke-width="1"/>
+              <circle cx="130" cy="24" r="2.5" fill="#F59E0B" stroke="#fff" stroke-width="1"/>
+              <circle cx="150" cy="15" r="2.5" fill="#F59E0B" stroke="#fff" stroke-width="1"/>
+              <circle cx="170" cy="11" r="2.5" fill="#F59E0B" stroke="#fff" stroke-width="1"/>
+              <circle cx="190" cy="13" r="2.5" fill="#F59E0B" stroke="#fff" stroke-width="1"/>
+              <circle cx="210" cy="7" r="2.5" fill="#F59E0B" stroke="#fff" stroke-width="1"/>
+              <circle cx="230" cy="8" r="2.5" fill="#F59E0B" stroke="#fff" stroke-width="1"/>
+              <circle cx="250" cy="3" r="2.5" fill="#F59E0B" stroke="#fff" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="ia-chart-labels">
+            <span>Ene</span><span>Feb</span><span>Mar</span><span>Abr</span><span>May</span><span>Jun</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Análisis predictivo -->
+        <div class="ia-card">
+          <div class="ia-card-title">Análisis predictivo</div>
+          <div class="ia-donut-row">
+            <div class="ia-donut-wrap">
+              <svg viewBox="0 0 80 80">
+                <!-- BG circle -->
+                <circle cx="40" cy="40" r="30" fill="none" stroke="#e2e8f0" stroke-width="10"/>
+                <!-- Negativo (10%) - light -->
+                <circle cx="40" cy="40" r="30" fill="none" stroke="#f1f5f9" stroke-width="10"
+                  stroke-dasharray="18.85 169.65" stroke-dashoffset="0"/>
+                <!-- Neutral (18%) -->
+                <circle cx="40" cy="40" r="30" fill="none" stroke="#FDE68A" stroke-width="10"
+                  stroke-dasharray="33.93 154.57" stroke-dashoffset="-18.85"/>
+                <!-- Positivo (72%) -->
+                <circle cx="40" cy="40" r="30" fill="none" stroke="#F59E0B" stroke-width="10"
+                  stroke-dasharray="135.72 52.78" stroke-dashoffset="-52.78"/>
+              </svg>
+              <div class="ia-donut-center">
+                <strong>72%</strong>
+                <span>Positivo</span>
+              </div>
+            </div>
+            <div class="ia-legend">
+              <div class="ia-legend-item">
+                <span class="ia-legend-dot" style="background:#F59E0B;"></span>
+                Positivo <span class="ia-legend-pct">72%</span>
+              </div>
+              <div class="ia-legend-item">
+                <span class="ia-legend-dot" style="background:#FDE68A;"></span>
+                Neutral <span class="ia-legend-pct">18%</span>
+              </div>
+              <div class="ia-legend-item">
+                <span class="ia-legend-dot" style="background:#f1f5f9;border:1px solid #e2e8f0;"></span>
+                Negativo <span class="ia-legend-pct">10%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Automatización de procesos -->
+        <div class="ia-card">
+          <div class="ia-card-title" style="margin-bottom: 12px;">Automatización de procesos</div>
+          <div class="ia-auto-row">
+            <div class="ia-robot-box">
+              <img src="images/ia-robot.jpg" alt="Robot AI">
+            </div>
+            <div class="ia-auto-stats">
+              <div class="ia-auto-label">Procesos automatizados</div>
+              <div class="ia-auto-pct" style="margin: 2px 0 4px 0;">84%</div>
+              <div class="ia-auto-sublabel" style="margin-bottom: 8px;">Ahorro de tiempo estimado</div>
+              <div class="ia-progress-bar">
+                <div class="ia-progress-fill"></div>
+              </div>
+            </div>
+          </div>
+          <div class="ia-card-footer" style="border-top: none; padding-top: 4px; margin-top: 8px;">
+            <span style="font-size: 11px;">Eficiencia operativa</span>
+            <span class="ia-badge-alta">Alta</span>
+          </div>
+        </div>
+
+      </div><!-- end ia-right -->
+    </div><!-- end ia-hero-grid -->
+  <!-- BOTTOM STATS BAR -->
+  <div class="ia-stats-bar">
+    <div class="ia-stat-item">
+      <div class="ia-stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      </div>
+      <div>
+        <span class="ia-stat-val">+27%</span>
+        <span class="ia-stat-label">Crecimiento promedio</span>
+      </div>
+    </div>
+    <div class="ia-stat-divider"></div>
+    <div class="ia-stat-item">
+      <div class="ia-stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div>
+        <span class="ia-stat-val">-35%</span>
+        <span class="ia-stat-label">Reducción de<br>tiempo operativo</span>
+      </div>
+    </div>
+    <div class="ia-stat-divider"></div>
+    <div class="ia-stat-item">
+      <div class="ia-stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="9" y1="10" x2="12" y2="8"/><line x1="15" y1="14" x2="12" y2="16"/></svg>
+      </div>
+      <div>
+        <span class="ia-stat-val">+42%</span>
+        <span class="ia-stat-label">Incremento en<br>conversión</span>
+      </div>
+    </div>
+    <div class="ia-stat-divider"></div>
+    <div class="ia-stat-item">
+      <div class="ia-stat-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div>
+        <span class="ia-stat-val">+3.2x</span>
+        <span class="ia-stat-label">ROI promedio<br>de proyectos</span>
+      </div>
+    </div>
+  </div>
+  </div><!-- end ia-hero-wrapper -->
+
+  <!-- BENEFITS SECTION -->
+  <section id="beneficios" style="padding: 80px 5%; background:#fff;">
+    <div style="max-width:1300px; margin:0 auto;">
+      <div class="ia-section-tag">BENEFICIOS</div>
+      <h2 class="ia-section-title">La IA que impulsa resultados reales</h2>
+      <div class="ia-benefits-grid">
+        <div class="ia-benefit-card">
+          <div class="ib-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+          <h4>Más precisión</h4>
+          <p>Modelos predictivos que reducen la incertidumbre y mejoran la toma de decisiones.</p>
+        </div>
+        <div class="ia-benefit-card">
+          <div class="ib-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+          <h4>Más eficiencia</h4>
+          <p>Automatizamos procesos repetitivos y optimizamos el uso de tus recursos.</p>
+        </div>
+        <div class="ia-benefit-card">
+          <div class="ib-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+          <h4>Mejor experiencia</h4>
+          <p>Soluciones inteligentes que entienden a tus usuarios y generan impacto.</p>
+        </div>
+        <div class="ia-benefit-card">
+          <div class="ib-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <h4>Escalabilidad</h4>
+          <p>Implementaciones flexibles que crecen junto a tu empresa y sus necesidades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS SECTION -->
+  <section id="soluciones" style="padding: 80px 5%; background:#f8fafc;">
+    <div style="max-width:1300px; margin:0 auto;">
+      <div class="ia-section-tag">SOLUCIONES DE IA</div>
+      <h2 class="ia-section-title">Aplicamos IA donde más lo necesitas</h2>
+      <div class="ia-solutions-grid">
+        <div class="ia-sol-card">
+          <div class="is-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M13 6h3a2 2 0 0 1 2 2v7"/><line x1="6" y1="9" x2="6" y2="21"/></svg></div>
+          <h4>Machine Learning</h4>
+          <p>Modelos predictivos para pronósticos, segmentación y detección de patrones.</p>
+        </div>
+        <div class="ia-sol-card">
+          <div class="is-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></div>
+          <h4>Chatbots Inteligentes</h4>
+          <p>Asistentes virtuales que entienden, responden y automatizan conversaciones.</p>
+        </div>
+        <div class="ia-sol-card">
+          <div class="is-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <h4>Visión por Computadora</h4>
+          <p>Análisis de imágenes y video para detección, clasificación y control de calidad.</p>
+        </div>
+        <div class="ia-sol-card">
+          <div class="is-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+          <h4>Procesamiento de Lenguaje (NLP)</h4>
+          <p>Análisis de texto, extracción de información y comprensión del lenguaje.</p>
+        </div>
+        <div class="ia-sol-card">
+          <div class="is-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+          <h4>Automatización Inteligente</h4>
+          <p>Robots de software y flujos inteligentes que reducen tareas manuales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- PROYECTOS CON IA -->
+  <section id="proyectos" style="padding: 80px 5%; background:#fff;">
+    <div style="max-width:1300px; margin:0 auto;">
+      <div class="ia-section-tag" style="text-align: center;">PROYECTOS CON IA</div>
+      <h2 class="ia-section-title" style="text-align: center;">Soluciones que ya generan impacto</h2>
+      
+      <div class="ia-projects-grid">
+        <!-- Card 1 -->
+        <div class="ia-proj-card">
+          <div class="ia-proj-img-wrap" onclick="openModal('images/predi.png')">
+            <img src="images/predi.png" alt="Predicción de demanda" class="ia-proj-img contain-img">
+            <div class="ia-proj-overlay">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Vista previa</span>
+            </div>
+          </div>
+          <div class="ia-proj-body">
+            <h4>Predicción de demanda</h4>
+            <p>Modelo de machine learning que predice la demanda con alta precisión para optimizar inventarios.</p>
+          </div>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="ia-proj-card">
+          <div class="ia-proj-img-wrap" onclick="openModal('images/chatbot.png')">
+            <img src="images/chatbot.png" alt="Chatbot de atención inteligente" class="ia-proj-img contain-img">
+            <div class="ia-proj-overlay">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Vista previa</span>
+            </div>
+          </div>
+          <div class="ia-proj-body">
+            <h4>Chatbot de atención inteligente</h4>
+            <p>Asistente virtual que automatiza consultas, comprende solicitudes y mejora los tiempos de respuesta.</p>
+          </div>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="ia-proj-card">
+          <div class="ia-proj-img-wrap" onclick="openModal('images/botellas.png')">
+            <img src="images/botellas.png" alt="Control de calidad con visión IA" class="ia-proj-img contain-img">
+            <div class="ia-proj-overlay">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              <span>Vista previa</span>
+            </div>
+          </div>
+          <div class="ia-proj-body">
+            <h4>Control de calidad con visión IA</h4>
+            <p>Sistema que detecta defectos en productos mediante visión por computadora en tiempo real.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH & CASES -->
+  <section style="padding: 80px 5%; background:#fff;">
+    <div style="max-width:1300px; margin:0 auto;">
+      <div class="ia-tc-wrapper">
+        <div>
+          <div class="tc-head">TECNOLOGÍAS QUE UTILIZAMOS</div>
+          <div class="tc-logos">
+            <div class="tc-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" aria-hidden="true"> Python</div>
+            <div class="tc-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg" alt="" aria-hidden="true"> TensorFlow</div>
+            <div class="tc-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="" aria-hidden="true"> PyTorch</div>
+            <div class="tc-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="" aria-hidden="true"> scikit-learn</div>
+            <div class="tc-logo" style="font-weight:700;">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" style="margin-right:8px;vertical-align:middle;">
+                <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A6.0651 6.0651 0 0 0 19.0192 19.818a5.9847 5.9847 0 0 0 3.9977-2.9001 6.0462 6.0462 0 0 0-.735-7.0968zM8.7505 6.7134a4.463 4.463 0 0 1 7.4536-3.3653 4.4534 4.4534 0 0 1 3.1666 1.9262 4.4398 4.4398 0 0 1 .5318 3.5292l-5.6322-3.2505a1.597 1.597 0 0 0-1.5833 0l-3.9365 2.2741zm10.7491 2.3784a4.463 4.463 0 0 1-1.396 7.9546 4.4534 4.4534 0 0 1-3.6662-1.0494 4.4398 4.4398 0 0 1-1.6315-3.176l5.6322 3.2505a1.597 1.597 0 0 0 1.5833 0l3.9365-2.2741zm-6.6183 9.4716a4.463 4.463 0 0 1-7.4536 3.3653 4.4534 4.4534 0 0 1-3.1666-1.9262 4.4398 4.4398 0 0 1-.5318-3.5292l5.6322 3.2505a1.597 1.597 0 0 0 1.5833 0l3.9365-2.2741zm-10.749-2.3784a4.463 4.463 0 0 1 1.396-7.9546 4.4534 4.4534 0 0 1 3.6662 1.0494 4.4398 4.4398 0 0 1 1.6315 3.176l-5.6322-3.2505a1.597 1.597 0 0 0-1.5833 0l-3.9365 2.2741zm7.7471-1.6888l-3.208-1.8517L12 9.493l3.208 1.8517-3.208 1.8517z"/>
+              </svg> OpenAI
+            </div>
+            <div class="tc-logo" style="font-weight:700;"><img src="https://cdn.simpleicons.org/langchain" alt="" aria-hidden="true" style="width:24px;height:24px;margin-right:8px;vertical-align:middle;"> LangChain</div>
+            <div class="tc-logo"><img src="https://cdn.simpleicons.org/huggingface" alt="" aria-hidden="true" style="width:24px;height:24px;margin-right:8px;vertical-align:middle;"> Hugging Face</div>
+            <div class="tc-logo"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="" aria-hidden="true"> pandas</div>
+          </div>
+          <p class="tc-desc">Usamos las mejores herramientas y frameworks para construir soluciones de IA robustas, seguras y escalables.</p>
+        </div>
+        <div>
+          <div class="tc-head">CASOS DE USO</div>
+          <div class="tc-cases-list">
+            <div class="tc-case"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg> Predicción de ventas y demanda</div>
+            <div class="tc-case"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg> Clasificación automática</div>
+            <div class="tc-case"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg> Detección de anomalías y fraudes</div>
+            <div class="tc-case"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg> Chatbots de atención al cliente</div>
+            <div class="tc-case"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg> Recomendadores de productos</div>
+            <div class="tc-case"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg> Visión artificial para inspección</div>
+            <div class="tc-case"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg> Análisis de sentimiento</div>
+            <div class="tc-case"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg> Optimización de procesos con IA</div>
+          </div>
+          <p class="tc-desc" style="margin-top:14px;">Y muchos casos de uso más adaptados a tu industria.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="ia-cta-banner">
+    <div class="ia-cta-left">
+      <div class="ia-cta-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <div class="ia-cta-text">
+        <h3>¿Listo para aplicar inteligencia artificial en tu empresa?</h3>
+        <p>Cuéntanos tu desafío y te ayudaremos a convertir tus datos en valor.</p>
+      </div>
+    </div>
+    <a href="index.html#contacto" class="ia-cta-btn">
+      Hablemos de tu proyecto
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+
+</main>
+
+<!-- Lightbox Modal -->
+<div id="ia-image-modal" class="ia-modal">
+  <span class="ia-modal-close" onclick="closeModal()">&times;</span>
+  <img class="ia-modal-content" id="ia-modal-img">
+</div>
+
+<script>
+  function openModal(imgSrc) {
+    const modal = document.getElementById("ia-image-modal");
+    const modalImg = document.getElementById("ia-modal-img");
+    modalImg.src = imgSrc;
+    modal.classList.add("show");
+  }
+  function closeModal() {
+    const modal = document.getElementById("ia-image-modal");
+    modal.classList.remove("show");
+  }
+  // Cierra el modal si se hace clic fuera de la imagen
+  document.getElementById("ia-image-modal").addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeModal();
+    }
+  });
+</script>
+
+</body>
+</html>

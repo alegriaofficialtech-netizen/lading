@@ -1,0 +1,713 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>P&aacute;ginas Corporativas y Landing Pages | ALEGRIA</title>
+  <meta name="description" content="Dise&ntilde;amos p&aacute;ginas corporativas y landing pages r&aacute;pidas, modernas y enfocadas en convertir visitas en oportunidades de negocio."/>
+  <link rel="canonical" href="https://alegria.pe/"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/styles_v2.css?v=32"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><polygon points='6,18 10,4 16,16' fill='%23F59E0B'/><polygon points='24,16 30,4 34,18' fill='%23F59E0B'/><circle cx='20' cy='22' r='14' fill='%23F59E0B'/><path d='M7.5 28 Q20 38 32.5 28 L30 32 Q20 40 10 32 Z' fill='%23DC2626'/><circle cx='20' cy='33' r='3.5' fill='%23FBBF24'/><circle cx='14' cy='20' r='2.5' fill='%23111827'/><circle cx='26' cy='20' r='2.5' fill='%23111827'/><ellipse cx='20' cy='24' rx='1.5' ry='1' fill='%23111827'/></svg>"/>
+<link rel="stylesheet" href="css/landing-web.css?v=30"/><style>
+  .lw-hero-badge-fixed {
+    position: absolute;
+    bottom: -30px;
+    left: -40px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    z-index: 10;
+    max-width: 380px;
+  }
+  .lw-hero-badge-fixed svg {
+    flex-shrink: 0;
+  }
+  .lw-hero-badge-fixed p {
+    color: #111827;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+  }
+  @media (max-width: 991px) {
+    .lw-hero-badge-fixed {
+      left: 20px;
+      right: 20px;
+      bottom: -40px;
+      max-width: none;
+      padding: 16px 20px;
+    }
+  }
+</style>
+</head>
+<body class="landing-page">
+
+<!-- HEADER -->
+<header class="header" id="header" role="banner">
+  <div class="header-inner">
+    <a href="index.html#inicio" class="logo" aria-label="ALEGRIA inicio">
+      <div class="logo-box" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none" width="40" height="40">
+          <polygon points="6,18 10,4 16,16" fill="#F59E0B"/>
+          <polygon points="24,16 30,4 34,18" fill="#F59E0B"/>
+          <circle cx="20" cy="22" r="14" fill="#F59E0B"/>
+          <!-- collar and bell -->
+          <path d="M7.5 28 Q20 38 32.5 28 L30 32 Q20 40 10 32 Z" fill="#DC2626"/>
+          <circle cx="20" cy="33" r="3.5" fill="#FBBF24"/>
+          <!-- eyes -->
+          <circle cx="14" cy="20" r="2.5" fill="#111827"/>
+          <circle cx="26" cy="20" r="2.5" fill="#111827"/>
+          <circle cx="14.5" cy="19" r="1" fill="#fff"/>
+          <circle cx="26.5" cy="19" r="1" fill="#fff"/>
+          <!-- nose -->
+          <ellipse cx="20" cy="24" rx="1.5" ry="1" fill="#111827"/>
+          <!-- whiskers -->
+          <line x1="4" y1="20" x2="9" y2="21" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="3" y1="23" x2="9" y2="22" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="36" y1="20" x2="31" y2="21" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="37" y1="23" x2="31" y2="22" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- mouth -->
+          <path d="M17 26 Q20 28 23 26" stroke="#111827" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          <line x1="4" y1="22" x2="10" y2="23" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="4" y1="26" x2="10" y2="25" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="36" y1="22" x2="30" y2="23" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="36" y1="26" x2="30" y2="25" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="logo-name">ALEGRIA</span>
+    </a>
+
+    <nav class="nav" role="navigation" aria-label="Navegaci&oacute;n principal">
+      <a href="index.html#inicio"    class="nav-link" data-s="inicio">Inicio</a>
+      <a href="index.html#servicios" class="nav-link active"         data-s="servicios">Servicios</a>
+      <a href="index.html#nosotros"  class="nav-link"         data-s="nosotros">Nosotros</a>
+      <a href="index.html#proyectos" class="nav-link"         data-s="proyectos">Proyectos</a>
+      <a href="index.html#contacto"  class="nav-link"         data-s="contacto">Contacto</a>
+    </nav>
+
+    <a href="index.html#newsletter" class="nav-cta">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+      Solicitar Propuesta
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+    <!-- HERO SECTION -->
+    <section class="lw-hero">
+      <div class="container lw-hero-grid">
+        
+        <!-- Left Content -->
+        <div class="lw-hero-left">
+          <span class="lw-tag">DESARROLLO DE P&Aacute;GINAS CORPORATIVAS</span>
+          
+          <h1 class="lw-h1 lw-serif">
+            Convierte tu pagina <br><span class="text-gold-highlight">en m&aacute;s ventas</span>
+          </h1>
+          
+          <p class="lw-desc">
+            Dise&ntilde;amos y desarrollamos p&aacute;ginas modernas, r&aacute;pidas y adaptadas a celulares para presentar tus servicios, fortalecer tu marca y facilitar que nuevos clientes contacten contigo.
+          </p>
+          
+          <!-- Buttons -->
+          <div class="lw-hero-actions">
+            <a href="https://wa.me/51939500067" class="lw-btn-primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+              Cotizar mi p&aacute;gina web 
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            
+            <a href="#proyectos" class="lw-btn-secondary">
+              Ver ejemplos de proyectos
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </a>
+          </div>
+          
+          <!-- Features -->
+          <div class="lw-hero-features-new">
+            <div class="lw-hero-feature-new">
+              <div class="lw-feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div>
+                <strong>Entrega r&aacute;pida</strong>
+                <span>Desde 2 a 4 semanas</span>
+              </div>
+            </div>
+            <div class="lw-hero-feature-new">
+              <div class="lw-feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="21.17" y1="8" x2="12" y2="8"></line><line x1="3.95" y1="6.06" x2="8.54" y2="14"></line><line x1="10.88" y1="21.94" x2="15.46" y2="14"></line></svg>
+              </div>
+              <div>
+                <strong>Dise&ntilde;o personalizado</strong>
+                <span>100% a medida</span>
+              </div>
+            </div>
+            <div class="lw-hero-feature-new">
+              <div class="lw-feature-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.9 1.3 1.5 1.5 2.5"></path><path d="M9 18h6"></path><path d="M10 22h4"></path></svg>
+              </div>
+              <div>
+                <strong>Soporte continuo</strong>
+                <span>Siempre contigo</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Content (Image only) -->
+        <div class="lw-hero-right">
+          <div class="lw-hero-img-container" style="position: relative;">
+            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1200&q=80" alt="Alegria Tech Team" class="lw-hero-laptop" style="box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-radius: 12px; object-fit: cover; aspect-ratio: 4/3;">
+            </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEMAS SECTION -->
+    <section class="lw-problems">
+      <div class="container">
+        <span class="lw-tag">SITIOS WEB QUE RESUELVEN M&Aacute;S QUE DISE&Ntilde;AN</span>
+        <h2 class="lw-h1 lw-serif">&iquest;Te identificas con<br>alguno de estos problemas?</h2>
+        
+        <div class="lw-p-cards">
+          <div class="lw-p-card">
+            <div class="lw-p-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+            <h4>Tus clientes no te encuentran en Google</h4>
+            <p>Tienes poca visibilidad y pierdes oportunidades todos los d&iacute;as.</p>
+          </div>
+          <div class="lw-p-card">
+            <div class="lw-p-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg></div>
+            <h4>Tu competencia se ve m&aacute;s profesional</h4>
+            <p>Sus sitios comunican confianza, mientras el tuyo se queda atr&aacute;s.</p>
+          </div>
+          <div class="lw-p-card">
+            <div class="lw-p-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"></polyline><polyline points="16 17 22 17 22 11"></polyline></svg></div>
+            <h4>Pierdes oportunidades de negocio</h4>
+            <p>No te contactan o dudan al confiar por una mala experiencia.</p>
+          </div>
+          <div class="lw-p-card">
+            <div class="lw-p-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></div>
+            <h4>Sitios lentos roban posibles clientes y tiempo</h4>
+            <p>Hoy la paciencia es baja y algunos se van antes de ver tu propuesta.</p>
+          </div>
+          <div class="lw-p-card">
+            <div class="lw-p-card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><circle cx="12" cy="14" r="1"></circle><path d="M12 10v2"></path></svg></div>
+            <h4>Tu informaci&oacute;n est&aacute; desordenada</h4>
+            <p>Generas una impresi&oacute;n confusa e insegura en tus clientes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- DARK FEATURE SECTION -->
+    <section class="lw-tool">
+      <div class="lw-tool-right"></div>
+      
+      <div class="container lw-tool-grid">
+        <div class="lw-tool-left">
+          <span class="lw-tag">DISE&Ntilde;AMOS PARA IMPULSAR TU CRECIMIENTO</span>
+          <h2 class="lw-h1 lw-serif">M&aacute;s que un sitio web,<br>una herramienta para crecer.</h2>
+          
+          <div class="lw-tool-checks">
+            <div class="lw-check-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <p>M&aacute;s confianza y credibilidad desde el primer d&iacute;a.</p>
+            </div>
+            <div class="lw-check-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <p>Atrae a m&aacute;s clientes y mu&eacute;strate.</p>
+            </div>
+            <div class="lw-check-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <p>Imagen profesional que te diferencia.</p>
+            </div>
+            <div class="lw-check-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <p>Optimizada para Google y lista para resultados.</p>
+            </div>
+            <div class="lw-check-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <p>Disponible 24/7 para tus clientes potenciales.</p>
+            </div>
+            <div class="lw-check-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              <p>Dise&ntilde;ada para convertir visitas en contactos y ventas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lw-tool-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+        <p>P&aacute;ginas dise&ntilde;adas que trabajan ante ti todos los d&iacute;as, atrayendo clientes ideales.</p>
+      </div>
+    </section>
+
+    <!-- ANTES Y DESPUES -->
+    <section class="lw-split">
+      <div class="container">
+        <span class="lw-tag">EL CAMBIO QUE TU EMPRESA NECESITA</span>
+        <h2 class="lw-h1 lw-serif">De invisible a inolvidable.</h2>
+        
+        <div class="lw-split-container">
+          <div class="lw-vs">VS</div>
+          
+          <div class="lw-split-card antes">
+            <div class="lw-card-img">
+              <img src="images/stress-businessman.jpg" alt="Empresario frustrado con su negocio">
+            </div>
+            <div class="lw-card-content">
+              <h3 class="lw-split-header">ANTES <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="10"></circle><path d="M16 16s-1.5-2-4-2-4 2-4 2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg></h3>
+              <ul class="lw-split-list">
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg> Poca presencia en internet</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg> No transmites profesionalismo</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg> Diseño desactualizado</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg> No generas confianza</li>
+                <li><svg viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg> Pierdes clientes a tu vecino</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="lw-split-card despues">
+            <div class="lw-card-content">
+              <h3 class="lw-split-header">DESPUÉS <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg></h3>
+              <ul class="lw-split-list">
+                <li><div class="lw-check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg></div> Presencia profesional y atractiva</li>
+                <li><div class="lw-check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg></div> Más visibilidad en buscadores</li>
+                <li><div class="lw-check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg></div> Diseño moderno y estratégico</li>
+                <li><div class="lw-check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg></div> Generas confianza y autoridad</li>
+                <li><div class="lw-check-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg></div> Más contactos y ventas estables</li>
+              </ul>
+            </div>
+            <div class="lw-card-img">
+              <img src="images/happy-businessman.jpg" alt="Empresario feliz con su página web">
+            </div>
+</div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- PORTFOLIO SECTION -->
+    <section class="lw-portfolio" id="proyectos">
+      <div class="container">
+        <div class="lw-portfolio-header">
+          <div>
+            <span class="lw-tag">PROYECTOS REALES, RESULTADOS REALES</span>
+            <h2 class="lw-h1 lw-serif">Sitios web creados para empresas que inspiran.</h2>
+          </div>
+          <a href="index.html#proyectos" class="lw-port-link">Ver todos los proyectos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
+        
+        <div class="lw-port-grid">
+          <!-- P1 -->
+          <div class="lw-port-card">
+            <img src="https://images.unsplash.com/photo-1541888081622-c7a6e1456a59?auto=format&fit=crop&w=600&q=80" alt="Tecsul">
+            <div class="lw-port-content">
+              <div class="lw-port-tag">Construcci&oacute;n</div>
+              <h4>TECSUL</h4>
+              <p>Presencia profesional que impulsa la confianza de empresas l&iacute;deres en construcci&oacute;n.</p>
+              <a href="index.html#proyectos">Ver proyecto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+          <!-- P2 -->
+          <div class="lw-port-card">
+            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=600&q=80" alt="Legal">
+            <div class="lw-port-content">
+              <div class="lw-port-tag">Legal</div>
+              <h4>IMPULSA LEGAL</h4>
+              <p>Sitio legal claro y elegante que comunica confianza y experiencia en cada detalle.</p>
+              <a href="index.html#proyectos">Ver proyecto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+          <!-- P3 -->
+          <div class="lw-port-card">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" alt="Salud">
+            <div class="lw-port-content">
+              <div class="lw-port-tag">Salud</div>
+              <h4>LABORATORIO CL&Iacute;NICO BEL&Eacute;N</h4>
+              <p>Sitio web profesional e informativo que refleja calidad, confianza y cercan&iacute;a.</p>
+              <a href="index.html#proyectos">Ver proyecto <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO TIMELINE -->
+    <section class="lw-timeline">
+      <div class="container">
+        <span class="lw-tag">NUESTRO PROCESO, SIMPLE Y TRANSPARENTE</span>
+        <h2 class="lw-h1 lw-serif">As&iacute; es como creamos tu p&aacute;gina web.</h2>
+        
+        <div class="lw-steps-container">
+          <div class="lw-step-line"></div>
+          
+          <div class="lw-step">
+            <div class="lw-step-circle">1</div>
+            <h4>Descubrimiento</h4>
+            <p>Entendemos tu negocio, objetivos y audiencia.</p>
+          </div>
+          <div class="lw-step">
+            <div class="lw-step-circle">2</div>
+            <h4>Planificaci&oacute;n</h4>
+            <p>Definimos la estructura, contenidos y estrategia.</p>
+          </div>
+          <div class="lw-step">
+            <div class="lw-step-circle">3</div>
+            <h4>Dise&ntilde;o</h4>
+            <p>Creamos una propuesta visual moderna y alineada a tu marca.</p>
+          </div>
+          <div class="lw-step">
+            <div class="lw-step-circle">4</div>
+            <h4>Desarrollo</h4>
+            <p>Convertimos el dise&ntilde;o en una web r&aacute;pida y totalmente funcional.</p>
+          </div>
+          <div class="lw-step">
+            <div class="lw-step-circle">5</div>
+            <h4>Revisi&oacute;n</h4>
+            <p>Probamos, ajustamos y aseguramos cada detalle.</p>
+          </div>
+          <div class="lw-step">
+            <div class="lw-step-circle">6</div>
+            <h4>Publicaci&oacute;n</h4>
+            <p>Lanzamos tu web y te capacitamos para que la administres.</p>
+          </div>
+        </div>
+        
+        <!-- Dos columnas: Que incluye vs FAQ -->
+        <div class="lw-features-faq">
+          <div class="lw-features-box">
+            <h3 class="lw-box-title">&iquest;QU&Eacute; INCLUYE TU P&Aacute;GINA WEB?</h3>
+            <ul class="lw-features-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg> Dise&ntilde;o 100% personalizado</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg> Sitio 100% responsive</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg> Dominio y hosting inicial</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg> Certificado SSL (seguridad)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg> SEO b&aacute;sico (Google)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg> Formulario de contacto</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg> Integraci&oacute;n con WhatsApp</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg> Redes sociales</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg> Google Maps (ubicaci&oacute;n)</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg> Capacitaci&oacute;n para administrar</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg> Soporte t&eacute;cnico inicial</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="20 6 9 17 4 12"></polyline></svg> Actualizaciones b&aacute;sicas</li>
+            </ul>
+          </div>
+<div class="lw-faq-box">
+            <h3 class="lw-box-title">PREGUNTAS FRECUENTES</h3>
+            <div class="lw-faq-item">
+              <div class="lw-faq-question">&iquest;En cu&aacute;nto tiempo estar&aacute; lista mi p&aacute;gina web? <span class="lw-faq-toggle">+</span></div>
+              <div class="lw-faq-answer"><p>Depende del alcance del proyecto. Una p&aacute;gina web profesional con informaci&oacute;n de tu negocio, contacto y WhatsApp est&aacute; lista en <strong>1 a 2 semanas</strong>. Si necesitas m&aacute;s secciones o funcionalidades a medida, el plazo va de 3 a 6 semanas. Al iniciar te entregamos un cronograma claro y fechas por etapa.</p></div>
+            </div>
+            <div class="lw-faq-item">
+              <div class="lw-faq-question">&iquest;Incluye dominio y hosting? <span class="lw-faq-toggle">+</span></div>
+              <div class="lw-faq-answer"><p>S&iacute;. El <strong>primer a&ntilde;o</strong> incluimos el dominio, el hosting y el certificado SSL (seguridad) para que tu sitio quede publicado desde el d&iacute;a uno. Despu&eacute;s de ese periodo solo pagas la renovaci&oacute;n anual, con tarifas que te anticipamos con total transparencia y sin sorpresas.</p></div>
+            </div>
+            <div class="lw-faq-item">
+              <div class="lw-faq-question">&iquest;La p&aacute;gina web ser&aacute; completamente m&iacute;a? <span class="lw-faq-toggle">+</span></div>
+              <div class="lw-faq-answer"><p>S&iacute;, la p&aacute;gina es <strong>100% tuya</strong>. Te entregamos el acceso completo (dominio, hosting, cuentas y configuraciones) y la capacitaci&oacute;n para administrarla con libertad. No dependes de nosotros para gestionar lo esencial; t&uacute; tienes el control total.</p></div>
+            </div>
+            <div class="lw-faq-item">
+              <div class="lw-faq-question">&iquest;Necesito conocimientos t&eacute;cnicos? <span class="lw-faq-toggle">+</span></div>
+              <div class="lw-faq-answer"><p>No. Nosotros nos encargamos de todo el desarrollo, y adem&aacute;s te capacitamos con una gu&iacute;a sencilla para editar textos, im&aacute;genes y precios <strong>sin tocar c&oacute;digo</strong>. Si alg&uacute;n d&iacute;a necesitas cambios m&aacute;s complejos, nuestro equipo los realiza por ti.</p></div>
+            </div>
+            <div class="lw-faq-item">
+              <div class="lw-faq-question">&iquest;Puedo modificar el contenido despu&eacute;s? <span class="lw-faq-toggle">+</span></div>
+              <div class="lw-faq-answer"><p>Totalmente. Despu&eacute;s de la entrega puedes actualizar textos, fotos, precios y horarios por tu cuenta o pedirnos los ajustes. Adem&aacute;s, incluimos <strong>actualizaciones b&aacute;sicas dentro del primer mes</strong> para que tu p&aacute;gina quede completamente afinada.</p></div>
+            </div>
+            <div class="lw-faq-item">
+              <div class="lw-faq-question">&iquest;Incluye mantenimiento despu&eacute;s de publicar? <span class="lw-faq-toggle">+</span></div>
+              <div class="lw-faq-answer"><p>Incluimos un <strong>periodo de soporte inicial</strong> con actualizaciones y ajustes b&aacute;sicos. Para el largo plazo ofrecemos planes de mantenimiento opcionales con respaldos, actualizaciones de seguridad, mejoras de contenido y soporte prioritario, para que tu web est&eacute; siempre protegida y vigente.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="lw-cta">
+      <div class="container lw-cta-container">
+        <div class="lw-cta-left">
+          <h2 class="lw-serif">&iquest;Listo para llevar tu empresa<br>al siguiente nivel digital?</h2>
+          <p>Hablemos de tu proyecto y hag&aacute;moslo realidad.</p>
+        </div>
+<div class="lw-cta-mid">
+          <a href="index.html#contacto" class="lw-btn-black">
+            Agenda una asesor&iacute;a gratuita 
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="https://wa.me/51939500067" class="lw-btn-outline">
+            Hablemos por WhatsApp 
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+          </a>
+        </div>
+        <div class="lw-cta-right">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" alt="Asesor" class="lw-cta-avatar">
+          <p class="lw-cta-text">Respuesta r&aacute;pida<br>y acompa&ntilde;amiento personalizado.</p>
+        </div>
+      </div>
+    </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo" aria-label="Pie de pagina ALEGRIA">
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div>
+        <div class="fb-logo" aria-label="ALEGRIA">
+          <div class="fb-box" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none" width="36" height="36" aria-hidden="true">
+              <polygon points="6,18 10,4 16,16" fill="#F59E0B"/>
+              <polygon points="24,16 30,4 34,18" fill="#F59E0B"/>
+              <circle cx="20" cy="22" r="14" fill="#F59E0B"/>
+              <path d="M7.5 28 Q20 38 32.5 28 L30 32 Q20 40 10 32 Z" fill="#DC2626"/>
+              <circle cx="20" cy="33" r="3.5" fill="#FBBF24"/>
+              <circle cx="14" cy="20" r="2.5" fill="#111827"/>
+              <circle cx="26" cy="20" r="2.5" fill="#111827"/>
+            </svg>
+          </div>
+          <span class="fb-name">ALEGRIA</span>
+        </div>
+        <p class="fb-tag">Alegria transforma ideas en soluciones de software que generan valor y resultados para tu negocio.</p>
+        <div class="fb-social" aria-label="Redes sociales">
+          <a href="#" class="soc-btn" id="soc-li" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+            </svg>
+          </a>
+          <a href="#" class="soc-btn" id="soc-fb" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" class="soc-btn" id="soc-ig" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="#" class="soc-btn" id="soc-tw" aria-label="Twitter/X">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" aria-hidden="true">
+              <line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/>
+            </svg>
+          </a>
+          <a href="#" class="soc-btn" id="soc-yt" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <div>
+        <h3 class="fc-title">Enlaces rapidos</h3>
+        <ul class="fc-links" role="list">
+          <li><a href="index.html#servicios" class="fc-link" id="fl-srv">Servicios</a></li>
+          <li><a href="index.html#nosotros"  class="fc-link" id="fl-nos">Nosotros</a></li>
+          <li><a href="index.html#proyectos" class="fc-link" id="fl-pro">Proyectos</a></li>
+          <li><a href="index.html#contacto"  class="fc-link" id="fl-cnt">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Services list -->
+      <div>
+        <h3 class="fc-title">Servicios</h3>
+        <ul class="fc-links" role="list">
+          <li><a href="index.html#servicios" class="fc-link" id="fl-s1">Desarrollo a medida</a></li>
+          <li><a href="index.html#servicios" class="fc-link" id="fl-s2">Aplicaciones web</a></li>
+          <li><a href="index.html#servicios" class="fc-link" id="fl-s3">Apps moviles</a></li>
+          <li><a href="index.html#servicios" class="fc-link" id="fl-s4">Integraciones y APIs</a></li>
+          <li><a href="index.html#servicios" class="fc-link" id="fl-s5">Soporte y mantenimiento</a></li>
+          <li><a href="index.html#servicios" class="fc-link" id="fl-s6">Consultoria tecnologica</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div id="contacto-info">
+        <h3 class="fc-title">Contactanos</h3>
+        <address style="font-style:normal">
+          <div class="fc-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <a href="mailto:hola@alegriatech.com">hola@alegriatech.com</a>
+          </div>
+          <div class="fc-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.91-1.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <a href="tel:+51987654321">+51 987 654 321</a>
+          </div>
+          <div class="fc-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>Lima, Peru</span>
+          </div>
+          <div class="fc-row">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <span>Lun - Vie 9:00 am - 6:00 pm</span>
+          </div>
+        </address>
+      </div>
+
+      <!-- Certifications -->
+      <div>
+        <h3 class="fc-title">Certificaciones</h3>
+        <div class="cert-badges">
+          <div class="cert-badge" aria-label="Certificacion ISO">
+            <span class="cert-name">ISO</span>
+            <span class="cert-sub">Certificado</span>
+          </div>
+          <div class="cert-badge" aria-label="Certificacion GDPR">
+            <span class="cert-name">GDPR</span>
+            <span class="cert-sub">Compliant</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bar">
+      <p class="f-copy">&copy; 2024 <span>Alegria Tech</span>. Todos los derechos reservados.</p>
+      <div class="f-policy">
+        <a href="#" id="f-privacy">Politica de privacidad</a>
+        <a href="#" id="f-terms">Terminos y condiciones</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="btt" id="btt" aria-label="Volver al inicio">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
+<script src="js/script.js" defer></script>
+    <!-- Lightbox Modal -->
+    <div id="image-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; backdrop-filter: blur(5px);" onclick="this.style.display='none'">
+      <span style="position: absolute; top: 20px; right: 40px; color: white; font-size: 50px; font-weight: 300; cursor: pointer;" onclick="document.getElementById('image-modal').style.display='none'">&times;</span>
+      <img src="images/hero-laptop-dashboard-v2.png" style="max-width: 95%; max-height: 95vh; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); object-fit: contain;" onclick="event.stopPropagation()">
+</div>
+
+<!-- Floating WhatsApp box -->
+<div class="floating-wa" id="waBox">
+  <button class="wa-close" onclick="document.getElementById('waBox').style.display='none'">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <a href="https://wa.me/51939500067?text=Hola, quiero informacion sobre sus servicios" class="wa-link" aria-label="Contactar por WhatsApp">
+    <div class="wa-icon">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.1-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    </div>
+    <div class="wa-text">
+      <h5>¿Hablamos?</h5>
+      <p>Cuéntanos tu proyecto y te asesoramos sin compromiso.</p>
+      <span>Escríbenos por WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+    </div>
+  </a>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

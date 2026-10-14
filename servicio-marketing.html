@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inteligencia Artificial | ALEGRIA</title>
+  <meta name="description" content="Implementamos soluciones con machine learning, automatización inteligente y modelos orientados a resolver necesidades reales de tu negocio.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles_v2.css?v=32">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'><polygon points='6,18 10,4 16,16' fill='%23F59E0B'/><polygon points='24,16 30,4 34,18' fill='%23F59E0B'/><circle cx='20' cy='22' r='14' fill='%23F59E0B'/><path d='M7.5 28 Q20 38 32.5 28 L30 32 Q20 40 10 32 Z' fill='%23DC2626'/><circle cx='20' cy='33' r='3.5' fill='%23FBBF24'/><circle cx='14' cy='20' r='2.5' fill='%23111827'/><circle cx='26' cy='20' r='2.5' fill='%23111827'/></svg>">
+  <style>
+    /* ===============================
+       IA PAGE — CSS (IDENTICAL TO MOCKUP)
+       =============================== */
+    :root {
+      --ia-yellow: #FACC15;
+      --ia-yellow-dark: #F59E0B;
+      --ia-dark: #111827;
+      --ia-gray: #64748B;
+      --ia-light-gray: #94A3B8;
+      --ia-bg: #FAFAF9;
+      --ia-white: #FFFFFF;
+      --ia-border: #E2E8F0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body.ia-page {
+      font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+      background-color: var(--ia-bg);
+      color: var(--ia-dark);
+    }
+
+    /* ---- BREADCRUMB ---- */
+    .ia-breadcrumb {
+      font-size: 13px;
+      color: var(--ia-light-gray);
+      padding: 18px 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ia-breadcrumb a { color: var(--ia-light-gray); text-decoration: none; }
+    .ia-breadcrumb a:hover { color: var(--ia-dark); }
+    .ia-breadcrumb .sep { color: var(--ia-border); font-size: 10px; }
+    .ia-breadcrumb .active-crumb { color: var(--ia-yellow-dark); font-weight: 600; }
+
+    /* ---- HERO WRAPPER ---- */
+    .ia-hero-wrapper {
+      background-color: #ffffff;
+      padding: 40px 5% 0;
+      min-height: 82vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Subtle circular background glow */
+    .ia-hero-wrapper::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 30%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(250,204,21,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ---- HERO GRID ---- */
+    .ia-hero-grid {
+      max-width: 1400px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 580px 1fr;
+      gap: 20px;
+      flex: 1;
+      align-items: center;
+      position: relative;
+      z-index: 5;
+    }
+
+    /* ---- LEFT COLUMN ---- */
+    .ia-left {
+      padding: 60px 0 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .ia-servicio-badge {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--ia-yellow-dark);
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .ia-servicio-badge::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 45px;
+      height: 3px;
+      background-color: var(--ia-yellow-dark);
+      border-radius: 2px;
+    }
+
+    .ia-main-title {
+      font-size: 70px;
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 24px;
+    }
+    .ia-main-title .line1 { color: var(--ia-dark); display: block; }
+    .ia-main-title .line2 { color: var(--ia-dark); display: block; }
+
+    .ia-title-divider {
+      display: none;
+    }
+
+    .ia-main-desc {
+      font-size: 17px;
+      color: var(--ia-gray);
+      line-height: 1.6;
+      margin-bottom: 36px;
+      font-weight: 500;
+      max-width: 500px;
+    }
+
+    /* Feature points */
+    .ia-features-row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+    .ia-feature-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 12px;
+    }
+    .ia-feature-item .fi-icon {
+      width: 50px;
+      height: 50px;
+      background-color: #fef3c7;
+      border: 1.5px solid #fde68a;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ia-yellow-dark);
+      flex-shrink: 0;
+    }
+    .ia-feature-item .fi-icon svg { width: 24px; height: 24px; }
+    .ia-feature-item .fi-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .ia-feature-item .fi-label {
+      font-size: 13px;
+      color: var(--ia-gray);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .ia-feature-item .fi-sub {
+      font-size: 14px;
+      color: var(--ia-dark);
+      font-weight: 700;
+    }
+
+    /* Buttons */
+    .ia-btns-row {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .ia-btn-primary {
+      background-color: var(--ia-yellow-dark);
+      color: var(--ia-dark);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 16px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 20px rgba(245,158,11,0.25);
+    }
+    .ia-btn-primary:hover { background-color: var(--ia-yellow); transform: translateY(-2px); }
+    .ia-btn-secondary {
+      background-color: transparent;
+      color: var(--ia-dark);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 16px 24px;
+      border-radius: 12px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+      border: 1.5px solid var(--ia-yellow-dark);
+    }
+    .ia-btn-secondary:hover { background-color: #fef3c7; }
+
+    /* ---- CENTER COLUMN (Brain Image) ---- */
+    .ia-center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      height: 100%;
+      min-height: 500px;
+    }
+
+    .brain-container {
+      width: 100%;
+      max-width: 520px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .brain-glow-ring {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120%;
+      height: 120%;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(250,204,21,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .ia-brain-img {
+      width: 100%;
+      max-width: 450px;
+      object-fit: contain;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 15px 40px rgba(245, 158, 11, 0.25));
+    }
+
+    /* Network lines on brain */
+    .brain-svg-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      opacity: 0.5;
+    }
+
+    /* ---- RIGHT COLUMN (Floating Cards) ---- */
+    .ia-right {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 30px 0 30px 20px;
+    }
+
+    .ia-card {
+      background-color: var(--ia-white);
+      border-radius: 16px;
+      padding: 18px 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    /* Card 1: Rendimiento del modelo */
+    .ia-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .ia-card-title {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ia-dark);
+    }
+    .ia-card-badge {
+      font-size: 10px;
+      color: var(--ia-light-gray);
+      background-color: var(--ia-white);
+      border: 1px solid rgba(0,0,0,0.06);
+      border-radius: 6px;
+      padding: 4px 8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .ia-metric-big {
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--ia-yellow-dark);
+      line-height: 1;
+    }
+    .ia-metric-sub {
+      font-size: 11px;
+      color: var(--ia-light-gray);
+      margin-bottom: 12px;
+    }
+
+    /* Mini sparkline chart */
+    .ia-sparkline {
+      width: 100%;
+      height: 50px;
+      position: relative;
+    }
+    .ia-sparkline svg { width: 100%; height: 100%; }
+    .ia-chart-labels {
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      color: var(--ia-light-gray);
+      margin-top: 4px;
+    }
+
+    /* Card 2: Analisis predictivo / donut */
+    .ia-donut-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 10px;
+    }
+    .ia-donut-wrap {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      flex-shrink: 0;
+    }
+    .ia-donut-wrap svg {
+      width: 80px;
+      height: 80px;
+      transform: rotate(-90deg);
+    }
+    .ia-donut-center {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .ia-donut-center strong { font-size: 17px; font-weight: 800; color: var(--ia-dark); display: block; line-height: 1.1; }
+    .ia-donut-center span { font-size: 9px; color: var(--ia-light-gray); display: block; }
+    .ia-legend { display: flex; flex-direction: column; gap: 7px; flex: 1; }
+    .ia-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12px;
+      color: var(--ia-dark);
+    }
+    .ia-legend-dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .ia-legend-pct { margin-left: auto; font-weight: 700; font-size: 12px; }
+
+    /* Card 3: Automatización de procesos */
+    .ia-auto-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 5px;
+    }
+    .ia-robot-box {
+      width: 90px;
+      height: 100px;
+      border-radius: 14px;
+      background-color: #f8fafc;
+      overflow: hidden;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ia-robot-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.1);
+    }
+    .ia-auto-stats { flex: 1; }
+    .ia-auto-label { font-size: 11px; color: var(--ia-light-gray); }
+    .ia-auto-pct { font-size: 26px; font-weight: 900; color: var(--ia-dark); line-height: 1; }
+    .ia-auto-sublabel { font-size: 11px; color: var(--ia-light-gray); }
+    .ia-progress-bar {
+      width: 100%;
+      height: 6px;
+      background-color: #f1f5f9;
+      border-radius: 4px;
+    }
+    .ia-progress-fill {
+      height: 100%;
+      width: 84%;
+      background: var(--ia-yellow-dark);
+      border-radius: 4px;
+    }
+    .ia-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--ia-border);
+      font-size: 11px;
+      color: var(--ia-light-gray);
+    }
+    .ia-badge-alta {
+      background-color: rgba(245,158,11,0.1);
+      color: var(--ia-yellow-dark);
+      border: 1px solid rgba(245,158,11,0.2);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+
+    /* ---- SECTIONS BELOW HERO ---- */
+    .ia-section {
+      padding: 80px 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .ia-section-tag {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--ia-yellow-dark);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .ia-section-tag::before, .ia-section-tag::after {
+      content: '';
+      height: 1px;
+      width: 40px;
+      background-color: var(--ia-yellow);
+      opacity: 0.5;
+    }
+    .ia-section-tag svg {
+      width: 14px;
+      height: 14px;
+      fill: var(--ia-yellow-dark);
+    }
+    .ia-section-title {
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--ia-dark);
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    /* Benefits Grid */
+    .ia-benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      position: relative;
+      z-index: 2;
+    }
+    .ia-benefit-card {
+      background: var(--ia-white);
+      border: 1px solid #f1f5f9;
+      border-radius: 12px;
+      padding: 40px 24px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+      border-bottom: 3px solid var(--ia-yellow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .ia-benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      border-bottom-color: var(--ia-yellow-dark);
+    }
+    .ib-icon {
+      width: 70px; height: 70px;
+      border-radius: 50%;
+      background: transparent;
+      border: 2px solid rgba(250,204,21,0.2);
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--ia-yellow-dark);
+      margin-bottom: 15px;
+      box-shadow: inset 0 0 0 5px rgba(250,204,21,0.05);
+    }
+    .ib-icon svg { width: 32px; height: 32px; stroke-width: 1.5; }
+    
+    .ib-dots {
+      display: flex;
+      gap: 4px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .ib-dots span {
+      width: 4px; height: 4px; border-radius: 50%; background: var(--ia-yellow); opacity: 0.5;
+    }
+    
+    .ia-benefit-card h4 { font-size: 17px; font-weight: 800; margin-bottom: 12px; color: var(--ia-dark); }
+    .ia-benefit-card .ib-line { width: 24px; height: 2px; background: var(--ia-yellow-dark); margin: 0 auto 16px; border-radius: 2px; }
+    .ia-benefit-card p { font-size: 13px; color: var(--ia-gray); line-height: 1.6; font-weight: 500; }
+
+    /* Solutions grid */
+    .ia-solutions-bg { background: #fdfbf6; }
+    .ia-solutions-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+    }
+    .ia-sol-card {
+      background: var(--ia-white);
+      border: 1px solid #f1f5f9;
+      border-radius: 12px;
+      padding: 40px 15px;
+      transition: all 0.3s ease;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+    }
+    .ia-sol-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      border-color: #e2e8f0;
+    }
+    .is-icon { 
+      width: 70px; height: 70px; 
+      border-radius: 50%; 
+      background: transparent; 
+      border: 2px solid rgba(250,204,21,0.2);
+      box-shadow: inset 0 0 0 5px rgba(250,204,21,0.05);
+      display: flex; align-items: center; justify-content: center; 
+      color: var(--ia-yellow-dark); 
+      margin-bottom: 15px; 
+    }
+    .is-icon svg { width: 32px; height: 32px; stroke-width: 1.5; }
+    
+    .is-dots {
+      display: flex;
+      gap: 4px;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .is-dots span {
+      width: 4px; height: 4px; border-radius: 50%; background: var(--ia-yellow); opacity: 0.5;
+    }
+    
+    .ia-sol-card h4 { font-size: 15px; font-weight: 800; margin-bottom: 12px; color: var(--ia-dark); line-height: 1.3; }
+    .ia-sol-card p { font-size: 12px; color: var(--ia-gray); line-height: 1.6; font-weight: 500; }
+
+    /* Decorative Backgrounds for Beneficios & Soluciones */
+    .ia-decor-wrapper {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .ia-decor-grid {
+      position: absolute;
+      width: 300px; height: 300px;
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(245,158,11,0.2) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(245,158,11,0.2) 1px, transparent 1px);
+      mask-image: radial-gradient(circle at center, black, transparent 70%);
+      -webkit-mask-image: radial-gradient(circle at center, black, transparent 70%);
+    }
+    .ia-decor-grid.top-left { top: -50px; left: -50px; }
+    .ia-decor-grid.bottom-right { bottom: -50px; right: -50px; }
+    
+    .ia-decor-shape {
+      position: absolute;
+      width: 400px; height: 400px;
+      opacity: 0.15;
+      filter: blur(25px);
+      background: linear-gradient(135deg, var(--ia-yellow-dark) 0%, #fef3c7 100%);
+      animation: float-shape 15s infinite ease-in-out alternate;
+    }
+    .ia-decor-shape.shape-1 {
+      top: -10%; right: -5%;
+      border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+      animation-delay: 0s;
+    }
+    .ia-decor-shape.shape-2 {
+      bottom: -10%; left: -5%;
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      animation-delay: -5s;
+    }
+    
+    /* Concentric Polygon (instead of circles) */
+    .ia-decor-poly {
+      position: absolute;
+      width: 600px; height: 600px;
+      border: 2px solid rgba(245,158,11,0.15);
+      border-radius: 40px;
+      transform: rotate(45deg);
+      animation: rotate-poly 40s linear infinite;
+    }
+    .ia-decor-poly::before {
+      content: '';
+      position: absolute; top: 40px; left: 40px; right: 40px; bottom: 40px;
+      border: 2px solid rgba(245,158,11,0.1);
+      border-radius: 30px;
+    }
+    .ia-decor-poly::after {
+      content: '';
+      position: absolute; top: 80px; left: 80px; right: 80px; bottom: 80px;
+      border: 2px solid rgba(245,158,11,0.05);
+      border-radius: 20px;
+    }
+    .ia-decor-poly.poly-1 { top: -250px; left: -250px; }
+    .ia-decor-poly.poly-2 { bottom: -250px; right: -250px; animation-direction: reverse; }
+
+    @keyframes float-shape {
+      0% { transform: translateY(0) rotate(0deg) scale(1); border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+      50% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+      100% { transform: translateY(-30px) rotate(45deg) scale(1.1); border-radius: 30% 70% 50% 50% / 50% 40% 60% 50%; }
+    }
+    @keyframes rotate-poly {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Yellow Wrapper for Circles */
+    .ia-yellow-bg-wrapper { background-color: #fef4cd; position: relative; overflow: hidden; }
+    .ia-yellow-bg-wrapper::before {
+      content: '';
+      position: absolute; top: 5%; right: -10%;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      border: 1px solid rgba(245,158,11,0.2);
+      box-shadow: inset 0 0 0 30px rgba(245,158,11,0.05);
+      z-index: 1;
+    }
+    .ia-yellow-bg-wrapper::after {
+      content: '';
+      position: absolute; bottom: 5%; left: -5%;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      border: 1px solid rgba(245,158,11,0.2);
+      box-shadow: inset 0 0 0 20px rgba(245,158,11,0.05);
+      z-index: 1;
+    }
+    .ia-circle-middle {
+      position: absolute; top: 50%; left: 40%; transform: translate(-50%, -50%);
+      width: 800px; height: 800px;
+      border-radius: 50%;
+      border: 1px solid rgba(245,158,11,0.15);
+      box-shadow: inset 0 0 0 40px rgba(245,158,11,0.03);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Process Section */
+    .ia-process-bg { position: relative; z-index: 2; }
+    
+    .ia-process-header { text-align: center; position: relative; z-index: 2; margin-bottom: 70px; }
+    .ia-process-tag { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--ia-yellow-dark); margin-bottom: 12px; }
+    .ia-process-title { font-size: 38px; font-weight: 800; color: #0f172a; margin-bottom: 20px; font-family: 'Georgia', serif; letter-spacing: -0.5px; }
+    
+    .ia-process-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 15px;
+      position: relative;
+      z-index: 2;
+    }
+    .ia-process-line {
+      display: none;
+    }
+    .ia-process-card {
+      background: transparent;
+      border: none;
+      padding: 0;
+      text-align: center;
+      position: relative;
+      box-shadow: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 2;
+    }
+    .ia-process-card:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: calc(50% + 40px);
+      width: calc(100% - 70px);
+      height: 2px;
+      background: var(--ia-yellow-dark);
+      z-index: 1;
+    }
+    .ia-process-card:not(:last-child)::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      right: calc(-50% + 30px);
+      width: 8px; height: 8px;
+      border-top: 2px solid var(--ia-yellow-dark);
+      border-right: 2px solid var(--ia-yellow-dark);
+      transform: rotate(45deg);
+      z-index: 2;
+    }
+    
+    .ip-circle {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: var(--ia-yellow-dark);
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+      margin-bottom: 20px;
+      z-index: 3;
+    }
+    .ip-icon { color: white; display: flex; }
+    .ip-icon svg { width: 40px; height: 40px; stroke-width: 1.5; }
+    
+    .ip-num {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: white;
+      color: #0f172a;
+      font-size: 13px; font-weight: 900;
+      display: flex; align-items: center; justify-content: center;
+      position: absolute;
+      top: 0; left: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      border: 1px solid rgba(0,0,0,0.05);
+      z-index: 4;
+    }
+    
+    .ia-process-card h4 { font-size: 16px; font-weight: 800; margin-bottom: 12px; color: #0f172a; line-height: 1.3; }
+    .ia-process-card p { font-size: 12px; color: var(--ia-gray); line-height: 1.5; font-weight: 500; padding: 0 5px; }
+    
+    .ia-process-footer {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.9);
+      border-radius: 30px;
+      padding: 12px 25px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin: 50px auto 0;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    }
+    .ia-process-footer svg { width: 18px; height: 18px; color: var(--ia-yellow-dark); }
+    .ia-process-footer span { font-size: 13px; font-weight: 600; color: #0f172a; }
+
+    /* Herramientas y Casos */
+    .ia-tools-bg { padding: 10px 5% 100px; text-align: center; position: relative; z-index: 2; }
+    .ia-tools-tag { font-size: 12px; font-weight: 800; letter-spacing: 2.5px; text-transform: uppercase; color: var(--ia-yellow-dark); margin-bottom: 16px; }
+    .ia-tools-title { font-size: 42px; font-weight: 800; color: #0f172a; margin-bottom: 50px; font-family: 'Inter', sans-serif; letter-spacing: -0.5px; }
+    
+    .ia-tools-grid { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; position: relative; z-index: 2; margin-bottom: 40px; max-width: 1200px; margin-left: auto; margin-right: auto; }
+    .ia-tool-card {
+      background: var(--ia-white); border-radius: 12px; padding: 22px 35px;
+      display: flex; align-items: center; gap: 15px; font-size: 17px; font-weight: 600; color: #0f172a;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: transform 0.3s ease; border: 1px solid rgba(255,255,255,0.8);
+    }
+    .ia-tool-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.06); }
+    .ia-tool-card img, .ia-tool-card svg { height: 32px; width: auto; display: block; }
+    
+    .ia-tools-footer {
+      display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+      font-size: 14px; font-weight: 500; color: #334155; position: relative; z-index: 2;
+    }
+    .ia-tools-footer svg { color: var(--ia-yellow-dark); width: 20px; height: 20px; }
+
+    .ia-cases-bg { background-color: #fdfbf6; padding: 80px 5%; text-align: center; border-top: 1px solid rgba(0,0,0,0.03); }
+    .ia-cases-tag { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--ia-yellow-dark); margin-bottom: 12px; }
+    .ia-cases-title { font-size: 34px; font-weight: 800; color: #0f172a; margin-bottom: 50px; font-family: 'Inter', sans-serif; letter-spacing: -0.5px; }
+    
+    .ia-cases-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; max-width: 1300px; margin: 0 auto; text-align: left; }
+    .ia-case-card {
+      background: var(--ia-white); border-radius: 12px; overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.04); transition: transform 0.3s ease;
+      display: flex; flex-direction: column;
+    }
+    .ia-case-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+    .ia-case-img { width: 100%; height: 130px; object-fit: cover; }
+    .ia-case-body { padding: 35px 20px 25px; position: relative; flex-grow: 1; }
+    .ia-case-icon {
+      width: 44px; height: 44px; border-radius: 50%; background: #fcd34d; color: #0f172a;
+      display: flex; align-items: center; justify-content: center;
+      position: absolute; top: -22px; left: 20px; border: 3px solid var(--ia-white);
+    }
+    .ia-case-icon svg { width: 22px; height: 22px; stroke-width: 2; }
+    .ia-case-body h4 { font-size: 15px; font-weight: 800; color: #0f172a; margin-bottom: 10px; line-height: 1.3; }
+    .ic-line { width: 20px; height: 3px; background: var(--ia-yellow); margin-bottom: 14px; }
+    .ia-case-body p { font-size: 12px; color: var(--ia-gray); line-height: 1.6; font-weight: 500; }
+
+    /* Hover Overlay & Modal */
+    .ia-proj-img-wrap {
+      position: relative; cursor: pointer; overflow: hidden;
+      background: #f8fafc; display: flex; align-items: center; justify-content: center;
+    }
+    .ia-proj-img-wrap:hover .ia-case-img { transform: scale(1.05); }
+    .ia-case-img { width: 100%; height: 130px; object-fit: cover; transition: transform 0.3s ease; display: block; }
+    .ia-proj-overlay {
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(17, 24, 39, 0.7); display: flex; flex-direction: column;
+      align-items: center; justify-content: center; color: #fff;
+      opacity: 0; transition: opacity 0.3s ease; font-weight: 600; font-size: 15px; gap: 10px;
+    }
+    .ia-proj-overlay svg { width: 30px; height: 30px; }
+    .ia-proj-img-wrap:hover .ia-proj-overlay { opacity: 1; }
+    
+    .ia-modal {
+      display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%;
+      background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(5px);
+      align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s;
+    }
+    .ia-modal.show { display: flex; opacity: 1; }
+    .ia-modal-content {
+      max-width: 90vw; max-height: 90vh; width: auto; height: auto; border-radius: 12px;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); transform: scale(0.95);
+      transition: transform 0.3s; object-fit: contain;
+      image-rendering: -webkit-optimize-contrast; /* Mejorar nitidez en Chrome/Safari */
+    }
+    .ia-modal.show .ia-modal-content { transform: scale(1); }
+    .ia-modal-close {
+      position: absolute; top: 25px; right: 35px; color: #cbd5e1;
+      font-size: 44px; font-weight: 300; cursor: pointer; line-height: 1; transition: color 0.2s;
+    }
+    .ia-modal-close:hover { color: #fff; }
+
+    /* CTA Banner */
+    .ia-cta-banner {
+      background-color: var(--ia-yellow-dark);
+      border-radius: 20px;
+      padding: 40px 50px;
+      margin: 0 5% 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+    .ia-cta-left { display: flex; align-items: center; gap: 20px; }
+    .ia-cta-icon { width: 52px; height: 52px; background: rgba(255,255,255,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+    .ia-cta-icon svg { width: 26px; height: 26px; color: #fff; }
+    .ia-cta-text h3 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 4px; }
+    .ia-cta-text p { font-size: 14px; color: rgba(255,255,255,0.8); }
+    .ia-cta-btn {
+      background: #fff;
+      color: var(--ia-yellow-dark);
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: all 0.25s;
+    }
+    .ia-cta-btn:hover { background: #fffbeb; }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .ia-hero-grid { grid-template-columns: 1fr 1fr; }
+      .ia-center { display: none; }
+      .ia-benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .ia-solutions-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .ia-hero-grid { grid-template-columns: 1fr; }
+      .ia-right { display: none; }
+      .ia-main-title { font-size: 50px; }
+      .ia-stats-bar { flex-wrap: wrap; gap: 20px; padding: 25px 30px; }
+      .ia-stat-divider { display: none; }
+      .ia-benefits-grid, .ia-solutions-grid, .ia-projects-grid, .ia-tc-wrapper { grid-template-columns: 1fr; }
+      .tc-logos { grid-template-columns: repeat(2, 1fr); }
+      .tc-cases-list { grid-template-columns: 1fr; }
+      .ia-cta-banner { flex-direction: column; text-align: center; }
+    }
+    
+    /* Scroll Animations */
+    .ia-animate { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .ia-animate.ia-visible { opacity: 1; transform: translateY(0); }
+    .ia-animate-delay-1 { transition-delay: 0.1s; }
+    .ia-animate-delay-2 { transition-delay: 0.2s; }
+    .ia-animate-delay-3 { transition-delay: 0.3s; }
+    .ia-animate-delay-4 { transition-delay: 0.4s; }
+    .ia-animate-delay-5 { transition-delay: 0.5s; }
+  </style>
+</head>
+<body class="ia-page">
+
+<!-- HEADER -->
+<header class="header" id="header" role="banner">
+  <div class="header-inner">
+    <a href="index.html#inicio" class="logo" aria-label="ALEGRIA inicio">
+      <div class="logo-box" aria-hidden="true">
+        <svg viewBox="0 0 40 40" fill="none" width="40" height="40">
+          <polygon points="6,18 10,4 16,16" fill="#F59E0B"/>
+          <polygon points="24,16 30,4 34,18" fill="#F59E0B"/>
+          <circle cx="20" cy="22" r="14" fill="#F59E0B"/>
+          <path d="M7.5 28 Q20 38 32.5 28 L30 32 Q20 40 10 32 Z" fill="#DC2626"/>
+          <circle cx="20" cy="33" r="3.5" fill="#FBBF24"/>
+          <circle cx="14" cy="20" r="2.5" fill="#111827"/>
+          <circle cx="26" cy="20" r="2.5" fill="#111827"/>
+          <circle cx="14.5" cy="19" r="1" fill="#fff"/>
+          <circle cx="26.5" cy="19" r="1" fill="#fff"/>
+          <ellipse cx="20" cy="24" rx="1.5" ry="1" fill="#111827"/>
+          <line x1="4" y1="20" x2="9" y2="21" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="3" y1="23" x2="9" y2="22" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="36" y1="20" x2="31" y2="21" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="37" y1="23" x2="31" y2="22" stroke="#111827" stroke-width="1.5" stroke-linecap="round"/>
+          <path d="M17 26 Q20 28 23 26" stroke="#111827" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="logo-name">ALEGRIA</span>
+    </a>
+
+    <nav class="nav" role="navigation" aria-label="Navegacion principal">
+      <a href="index.html#inicio" class="nav-link" data-s="inicio">Inicio</a>
+      <a href="index.html#servicios" class="nav-link active" data-s="servicios">Servicios</a>
+      <a href="index.html#proyectos" class="nav-link" data-s="proyectos">Proyectos</a>
+      <a href="index.html#contacto" class="nav-link" data-s="contacto">Contacto</a>
+    </nav>
+
+    <a href="index.html#contacto" class="nav-cta">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </svg>
+      Hablemos
+    </a>
+  </div>
+</header>
+
+<main>
+  <!-- BREADCRUMB -->
+  <div class="ia-breadcrumb">
+    <a href="index.html">Inicio</a>
+    <span class="sep">›</span>
+    <a href="index.html#servicios">Servicios</a>
+    <span class="sep">›</span>
+    <span class="active-crumb">Marketing y Crecimiento Digital</span>
+  </div>
+
+  <!-- HERO WRAPPER -->
+  <div class="ia-hero-wrapper">
+    <div class="ia-hero-grid">
+
+      <!-- LEFT: Text content -->
+      <div class="ia-left">
+        <div class="ia-servicio-badge">
+          SERVICIO
+        </div>
+
+        <h1 class="ia-main-title">
+          <span class="line1">Marketing y</span>
+          <span class="line2">Crecimiento Digital</span>
+        </h1>
+
+        <div class="ia-title-divider"></div>
+
+        <p class="ia-main-desc">
+          Diseñamos estrategias digitales, campañas y experiencias enfocadas en posicionamiento, conversión y crecimiento sostenible de tu negocio.
+        </p>
+
+        <!-- Feature points -->
+        <div class="ia-features-row">
+          <div class="ia-feature-item">
+            <div class="fi-icon">
+              <!-- Edit/Pen Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <div class="fi-text">
+              <span class="fi-label">Estrategias</span>
+              <span class="fi-sub">a medida</span>
+            </div>
+          </div>
+          <div class="ia-feature-item">
+            <div class="fi-icon">
+              <!-- Bar chart Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <div class="fi-text">
+              <span class="fi-label">Resultados</span>
+              <span class="fi-sub">medibles</span>
+            </div>
+          </div>
+          <div class="ia-feature-item">
+            <div class="fi-icon">
+              <!-- Target Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <div class="fi-text">
+              <span class="fi-label">Enfoque en</span>
+              <span class="fi-sub">conversión</span>
+            </div>
+          </div>
+          <div class="ia-feature-item">
+            <div class="fi-icon">
+              <!-- Trending up Icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+            </div>
+            <div class="fi-text">
+              <span class="fi-label">Crecimiento</span>
+              <span class="fi-sub">sostenible</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="ia-btns-row">
+          <a href="index.html#contacto" class="ia-btn-primary">
+            Cuéntanos tu proyecto
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#soluciones" class="ia-btn-secondary">
+            Ver soluciones
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><polyline points="6 9 12 15 18 9"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Laptop Image -->
+      <div class="ia-right" style="position: relative; display: flex; justify-content: flex-end; align-items: center;">
+        <img src="images/mar.png" alt="Dashboard de marketing" style="width: 110%; max-width: 900px; object-fit: contain; transform: translateX(5%);">
+      </div>
+    </div><!-- end ia-hero-grid -->
+
+  </div><!-- end ia-hero-wrapper -->
+
+  <!-- BENEFITS SECTION -->
+  <section id="beneficios" style="padding: 100px 5%; background-color: #fdfbf6; position: relative; overflow: hidden;">
+    <!-- Background Decor -->
+    <div class="ia-decor-wrapper">
+      <div class="ia-decor-grid top-left"></div>
+      <div class="ia-decor-poly poly-1"></div>
+      <div class="ia-decor-shape shape-1"></div>
+    </div>
+    
+    <div style="max-width:1100px; margin:0 auto; position: relative;">
+      <div class="ia-section-tag">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> 
+        BENEFICIOS
+      </div>
+      <h2 class="ia-section-title">Impulsamos tu marca,<br>atraemos clientes, generamos resultados</h2>
+      
+      <div class="ia-benefits-grid">
+        <!-- Card 1 -->
+        <div class="ia-benefit-card">
+          <div class="ib-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h4>Más visibilidad</h4>
+          <div class="ib-line"></div>
+          <p>Mejoramos tu presencia digital y posicionamiento en los canales correctos.</p>
+        </div>
+        
+        <!-- Card 2 -->
+        <div class="ia-benefit-card">
+          <div class="ib-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path><path d="M12 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path></svg>
+          </div>
+          <h4>Más clientes</h4>
+          <div class="ib-line"></div>
+          <p>Creamos estrategias enfocadas en atraer clientes potenciales y convertir visitas en ventas.</p>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="ia-benefit-card">
+          <div class="ib-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </div>
+          <h4>Mejor rendimiento</h4>
+          <div class="ib-line"></div>
+          <p>Optimizamos campañas y contenidos para obtener el máximo retorno de tu inversión.</p>
+        </div>
+        
+        <!-- Card 4 -->
+        <div class="ia-benefit-card">
+          <div class="ib-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+          </div>
+          <h4>Crecimiento continuo</h4>
+          <div class="ib-line"></div>
+          <p>Analizamos, medimos y mejoramos constantemente para escalar tus resultados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUTIONS SECTION -->
+  <section id="soluciones" style="padding: 100px 5%; background-color: #fdfbf6; position: relative; overflow: hidden;">
+    <!-- Background Decor -->
+    <div class="ia-decor-wrapper">
+      <div class="ia-decor-grid bottom-right"></div>
+      <div class="ia-decor-poly poly-2"></div>
+      <div class="ia-decor-shape shape-2"></div>
+    </div>
+    
+    <div style="max-width:1300px; margin:0 auto; position: relative;">
+      <div class="ia-section-tag">
+        <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg> 
+        SOLUCIONES QUE OFRECEMOS
+      </div>
+      <h2 class="ia-section-title" style="margin-bottom: 20px;">Estrategias digitales que generan impacto</h2>
+      <div style="width: 40px; height: 3px; background: var(--ia-yellow-dark); margin: 0 auto 50px; border-radius: 2px;"></div>
+      
+      <div class="ia-solutions-grid">
+        <!-- Card 1 -->
+        <div class="ia-sol-card">
+          <div class="is-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></div>
+          <h4>Estrategia Digital</h4>
+          <div style="width: 24px; height: 2px; background: var(--ia-yellow-dark); margin: 0 auto 16px; border-radius: 2px;"></div>
+          <p>Definimos objetivos, público, propuesta de valor y un plan de acción claro.</p>
+        </div>
+        <!-- Card 2 -->
+        <div class="ia-sol-card">
+          <div class="is-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></div>
+          <h4>Publicidad Online</h4>
+          <div style="width: 24px; height: 2px; background: var(--ia-yellow-dark); margin: 0 auto 16px; border-radius: 2px;"></div>
+          <p>Creamos campañas orientadas a resultados para aumentar alcance, clientes y ventas.</p>
+        </div>
+        <!-- Card 3 -->
+        <div class="ia-sol-card">
+          <div class="is-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg></div>
+          <h4>SEO y Posicionamiento</h4>
+          <div style="width: 24px; height: 2px; background: var(--ia-yellow-dark); margin: 0 auto 16px; border-radius: 2px;"></div>
+          <p>Mejoramos tu visibilidad en buscadores y atraemos tráfico orgánico de calidad.</p>
+        </div>
+        <!-- Card 4 -->
+        <div class="ia-sol-card">
+          <div class="is-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+          <h4>Redes Sociales</h4>
+          <div style="width: 24px; height: 2px; background: var(--ia-yellow-dark); margin: 0 auto 16px; border-radius: 2px;"></div>
+          <p>Gestionamos tus canales, creamos contenido y construimos comunidades que conectan.</p>
+        </div>
+        <!-- Card 5 -->
+        <div class="ia-sol-card">
+          <div class="is-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+          <h4>Email Marketing</h4>
+          <div style="width: 24px; height: 2px; background: var(--ia-yellow-dark); margin: 0 auto 16px; border-radius: 2px;"></div>
+          <p>Automatizamos y segmentamos campañas para nutrir oportunidades y convertir clientes.</p>
+        </div>
+        <!-- Card 6 -->
+        <div class="ia-sol-card">
+          <div class="is-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg></div>
+          <h4>Analítica y Reporting</h4>
+          <div style="width: 24px; height: 2px; background: var(--ia-yellow-dark); margin: 0 auto 16px; border-radius: 2px;"></div>
+          <p>Medimos resultados con reportes y dashboards claros para tomar mejores decisiones.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUESTRO PROCESO Y HERRAMIENTAS (Yellow Wrapper) -->
+  <div class="ia-yellow-bg-wrapper">
+    <div class="ia-circle-middle"></div>
+    <section id="proceso" class="ia-process-bg" style="padding: 100px 5% 40px;">
+    <div style="max-width:1300px; margin:0 auto; position: relative; text-align: center;">
+      
+      <div class="ia-process-header">
+        <div class="ia-process-tag">NUESTRO PROCESO</div>
+        <h2 class="ia-process-title">Un método estratégico,<br>enfocado en resultados</h2>
+        <p style="color: var(--ia-gray); max-width: 600px; margin: 0 auto 30px; line-height: 1.6;">Seguimos un proceso probado que nos permite convertir ideas en estrategias digitales efectivas y medibles.</p>
+      </div>
+      
+      <div style="position: relative;">
+        <div class="ia-process-line"></div>
+        <div class="ia-process-grid">
+          
+          <!-- Step 1: Diagnóstico — lupa/búsqueda -->
+          <div class="ia-process-card">
+            <div class="ip-circle">
+              <div class="ip-num">1</div>
+              <div class="ip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+            </div>
+            <h4>Diagnóstico</h4>
+            <p>Analizamos tu negocio, competencia y mercado para identificar oportunidades.</p>
+          </div>
+          
+          <!-- Step 2: Estrategia — bombilla -->
+          <div class="ia-process-card">
+            <div class="ip-circle">
+              <div class="ip-num">2</div>
+              <div class="ip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg></div>
+            </div>
+            <h4>Estrategia</h4>
+            <p>Diseñamos un plan digital personalizado con objetivos claros y medibles.</p>
+          </div>
+          
+          <!-- Step 3: Implementación — herramientas -->
+          <div class="ia-process-card">
+            <div class="ip-circle">
+              <div class="ip-num">3</div>
+              <div class="ip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+            </div>
+            <h4>Implementación</h4>
+            <p>Ejecutamos campañas, contenido y acciones en los canales adecuados.</p>
+          </div>
+          
+          <!-- Step 4: Optimización — ajustes/engranaje -->
+          <div class="ia-process-card">
+            <div class="ip-circle">
+              <div class="ip-num">4</div>
+              <div class="ip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-2.82 1.17V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-2.82-1.17l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.6 15H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.27 8.18l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9.91 4.6V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 2.82 1.17l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 2z"/></svg></div>
+            </div>
+            <h4>Optimización</h4>
+            <p>Monitoreamos y ajustamos para mejorar el rendimiento y reducir costos.</p>
+          </div>
+          
+          <!-- Step 5: Medición — portapapeles/reporte -->
+          <div class="ia-process-card">
+            <div class="ip-circle">
+              <div class="ip-num">5</div>
+              <div class="ip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg></div>
+            </div>
+            <h4>Medición</h4>
+            <p>Generamos reportes y dashboards que muestran el impacto de cada acción.</p>
+          </div>
+          
+          <!-- Step 6: Escalamiento — cohete -->
+          <div class="ia-process-card">
+            <div class="ip-circle">
+              <div class="ip-num">6</div>
+              <div class="ip-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/><circle cx="6.5" cy="11.5" r="1"/><circle cx="8.5" cy="7.5" r="1"/><circle cx="12" cy="6" r="1"/><circle cx="15.5" cy="7.5" r="1"/><circle cx="17.5" cy="11.5" r="1"/></svg></div>
+            </div>
+            <h4>Escalamiento</h4>
+            <p>Potenciamos lo que funciona para lograr un crecimiento sostenible en el tiempo.</p>
+          </div>
+          
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  </div>
+
+  <!-- RESULTADOS QUE GENERAMOS -->
+  <section id="resultados" style="padding: 80px 5%; background: #fff; position: relative; overflow: hidden;">
+    <!-- Subtle background dots -->
+    <div style="position:absolute;top:-60px;right:-60px;width:300px;height:300px;background-image:radial-gradient(circle,rgba(245,158,11,0.15) 1px,transparent 1px);background-size:20px 20px;border-radius:50%;pointer-events:none;"></div>
+    <div style="position:absolute;bottom:-60px;left:-60px;width:280px;height:280px;background-image:radial-gradient(circle,rgba(245,158,11,0.1) 1px,transparent 1px);background-size:20px 20px;border-radius:50%;pointer-events:none;"></div>
+
+    <div style="max-width:1200px;margin:0 auto;position:relative;">
+      <!-- Title -->
+      <div style="text-align:center;margin-bottom:50px;">
+        <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:14px;">
+          <div style="width:30px;height:1px;background:var(--ia-yellow-dark);"></div>
+          <span style="font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--ia-yellow-dark);">RESULTADOS QUE GENERAMOS</span>
+          <div style="width:30px;height:1px;background:var(--ia-yellow-dark);"></div>
+        </div>
+      </div>
+
+      <!-- 4 result cards -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:20px;">
+
+        <!-- Card 1 -->
+        <div style="background:#fff;border:1.5px solid #f0f0f0;border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;box-shadow:0 4px 20px rgba(0,0,0,0.04);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+          <div style="width:52px;height:52px;border-radius:50%;background:#fffbeb;border:1.5px solid #fde68a;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <p style="font-size:13px;font-weight:800;color:var(--ia-yellow-dark);margin-bottom:6px;">+ Tráfico de calidad</p>
+            <p style="font-size:13px;color:#64748b;line-height:1.6;">Atraemos visitantes realmente interesados en tu negocio.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div style="background:#fff;border:1.5px solid #f0f0f0;border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;box-shadow:0 4px 20px rgba(0,0,0,0.04);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+          <div style="width:52px;height:52px;border-radius:50%;background:#fffbeb;border:1.5px solid #fde68a;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+          </div>
+          <div>
+            <p style="font-size:13px;font-weight:800;color:var(--ia-yellow-dark);margin-bottom:6px;">+ Conversiones</p>
+            <p style="font-size:13px;color:#64748b;line-height:1.6;">Convertimos visitas en clientes y oportunidades de venta.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div style="background:#fff;border:1.5px solid #f0f0f0;border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;box-shadow:0 4px 20px rgba(0,0,0,0.04);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+          <div style="width:52px;height:52px;border-radius:50%;background:#fffbeb;border:1.5px solid #fde68a;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+          </div>
+          <div>
+            <p style="font-size:13px;font-weight:800;color:var(--ia-yellow-dark);margin-bottom:6px;">+ Ventas</p>
+            <p style="font-size:13px;color:#64748b;line-height:1.6;">Estrategias que impulsan tus ingresos y crecimiento.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div style="background:#fff;border:1.5px solid #f0f0f0;border-radius:16px;padding:28px 24px;display:flex;flex-direction:column;align-items:flex-start;gap:14px;box-shadow:0 4px 20px rgba(0,0,0,0.04);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 30px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+          <div style="width:52px;height:52px;border-radius:50%;background:#fffbeb;border:1.5px solid #fde68a;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><line x1="12" y1="6" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="18"/></svg>
+          </div>
+          <div>
+            <p style="font-size:13px;font-weight:800;color:var(--ia-yellow-dark);margin-bottom:6px;">+ Retorno de inversión</p>
+            <p style="font-size:13px;color:#64748b;line-height:1.6;">Campañas optimizadas para maximizar cada sol invertido.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Divider -->
+      <div style="display:flex;align-items:center;gap:16px;margin:60px 0 50px;">
+        <div style="flex:1;height:1px;background:linear-gradient(to right,transparent,#e5e7eb);"></div>
+        <div style="display:inline-flex;align-items:center;gap:10px;">
+          <span style="color:var(--ia-yellow-dark);font-size:14px;">✦</span>
+          <span style="font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--ia-yellow-dark);">HERRAMIENTAS QUE UTILIZAMOS</span>
+          <span style="color:var(--ia-yellow-dark);font-size:14px;">✦</span>
+        </div>
+        <div style="flex:1;height:1px;background:linear-gradient(to left,transparent,#e5e7eb);"></div>
+      </div>
+
+      <!-- Tools grid -->
+      <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-bottom:30px;">
+
+        <!-- Google Ads -->
+        <div style="background:#fff;border:1.5px solid #f0f0f0;border-radius:14px;padding:18px 12px;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:10px;box-shadow:0 2px 10px rgba(0,0,0,0.03);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 20px rgba(0,0,0,0.07)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 10px rgba(0,0,0,0.03)'">
+          <img src="https://cdn.simpleicons.org/googleads/4285F4" alt="Google Ads" height="24" width="24">
+          <span style="font-size:13px;font-weight:700;color:#1e293b;white-space:nowrap;">Google Ads</span>
+        </div>
+
+        <!-- Meta -->
+        <div style="background:#fff;border:1.5px solid #f0f0f0;border-radius:14px;padding:18px 12px;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:10px;box-shadow:0 2px 10px rgba(0,0,0,0.03);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 20px rgba(0,0,0,0.07)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 10px rgba(0,0,0,0.03)'">
+          <img src="https://cdn.simpleicons.org/meta/0468FF" alt="Meta" height="24" width="24">
+          <span style="font-size:13px;font-weight:700;color:#1e293b;">Meta</span>
+        </div>
+
+        <!-- TikTok Ads -->
+        <div style="background:#fff;border:1.5px solid #f0f0f0;border-radius:14px;padding:18px 12px;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:10px;box-shadow:0 2px 10px rgba(0,0,0,0.03);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 20px rgba(0,0,0,0.07)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 10px rgba(0,0,0,0.03)'">
+          <img src="https://cdn.simpleicons.org/tiktok/000000" alt="TikTok Ads" height="24" width="24">
+          <span style="font-size:13px;font-weight:700;color:#1e293b;white-space:nowrap;">TikTok Ads</span>
+        </div>
+
+        <!-- Google Analytics -->
+        <div style="background:#fff;border:1.5px solid #f0f0f0;border-radius:14px;padding:18px 12px;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:10px;box-shadow:0 2px 10px rgba(0,0,0,0.03);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 20px rgba(0,0,0,0.07)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 10px rgba(0,0,0,0.03)'">
+          <img src="https://cdn.simpleicons.org/googleanalytics/E37400" alt="Google Analytics" height="24" width="24">
+          <span style="font-size:12px;font-weight:700;color:#1e293b;white-space:nowrap;">Google Analytics</span>
+        </div>
+
+        <!-- SEMRUSH -->
+        <div style="background:#fff;border:1.5px solid #f0f0f0;border-radius:14px;padding:18px 12px;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:10px;box-shadow:0 2px 10px rgba(0,0,0,0.03);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 20px rgba(0,0,0,0.07)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 10px rgba(0,0,0,0.03)'">
+          <img src="https://cdn.simpleicons.org/semrush/FF642D" alt="SEMRUSH" height="24" width="24">
+          <span style="font-size:13px;font-weight:700;color:#1e293b;">SEMRUSH</span>
+        </div>
+
+        <!-- HubSpot -->
+        <div style="background:#fff;border:1.5px solid #f0f0f0;border-radius:14px;padding:18px 12px;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:10px;box-shadow:0 2px 10px rgba(0,0,0,0.03);transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 8px 20px rgba(0,0,0,0.07)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 2px 10px rgba(0,0,0,0.03)'">
+          <img src="https://cdn.simpleicons.org/hubspot/FF7A59" alt="HubSpot" height="24" width="24">
+          <span style="font-size:13px;font-weight:700;color:#1e293b;">HubSpot</span>
+        </div>
+
+      </div>
+
+      <!-- Footer note -->
+      <p style="text-align:center;font-size:13px;color:#94a3b8;line-height:1.6;">Utilizamos plataformas líderes y metodologías probadas para garantizar estrategias efectivas y medibles.</p>
+
+    </div>
+  </section>
+
+  <!-- CASOS DE ÉXITO -->
+  <section id="casos" style="padding: 100px 5%; background-color: #fdfcf7; position: relative; overflow: hidden;">
+    
+    <!-- Decoración de fondo simple -->
+    <div style="position:absolute;top:0;left:0;width:300px;height:300px;background-image:radial-gradient(circle,rgba(217,119,6,0.15) 2px,transparent 2px);background-size:24px 24px;pointer-events:none;"></div>
+    
+    <!-- SVG Decorativo derecho -->
+    <div style="position:absolute;top:-50px;right:-50px;opacity:0.6;pointer-events:none;">
+      <svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M400 50C250 50 150 150 50 400" stroke="#fde68a" stroke-width="1.5" />
+        <path d="M400 100C250 100 150 200 100 400" stroke="#fde68a" stroke-width="1.5" />
+        <path d="M400 150C250 150 150 250 150 400" stroke="#fde68a" stroke-width="1.5" />
+      </svg>
+    </div>
+
+    <!-- SVG Decorativo izquierdo inferior -->
+    <div style="position:absolute;bottom:-100px;left:-50px;opacity:0.6;pointer-events:none;">
+      <svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M-50 250C100 250 200 150 300 -50" stroke="#fde68a" stroke-width="1.5" />
+        <path d="M-50 200C100 200 200 100 250 -50" stroke="#fde68a" stroke-width="1.5" />
+        <path d="M-50 150C100 150 200 50 200 -50" stroke="#fde68a" stroke-width="1.5" />
+      </svg>
+    </div>
+
+    <div style="max-width:1200px; margin:0 auto; position: relative;">
+      
+      <!-- Título -->
+      <div style="text-align:center;margin-bottom:60px;">
+        <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:14px;">
+          <div style="width:30px;height:1.5px;background:#d97706;"></div>
+          <span style="font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:#d97706;">CASOS DE ÉXITO</span>
+          <div style="width:30px;height:1.5px;background:#d97706;"></div>
+        </div>
+        <h2 style="font-size:42px;font-weight:800;color:#0f172a;line-height:1.2;font-family:'Lora',serif;">Proyectos que generaron crecimiento real</h2>
+      </div>
+
+      <!-- Tarjetas Grid -->
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;">
+        
+        <!-- Tarjeta 1: Moda -->
+        <div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.04);border:1px solid #f1f5f9;display:flex;flex-direction:column;transition:transform .2s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="position:relative;height:240px;background:#e2e8f0;border-bottom:1px solid #f1f5f9;">
+            <!-- Dummy Image for now, user can change -->
+            <img src="images/negocio.png" style="width:100%;height:100%;object-fit:cover;" alt="E-commerce de Moda">
+            <div style="position:absolute;bottom:-28px;left:24px;width:56px;height:56px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+              <div style="width:46px;height:46px;border-radius:50%;border:1.5px solid #fde68a;display:flex;align-items:center;justify-content:center;background:#fffbeb;">
+                <!-- Shopping Bag icon -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/>
+                  <path d="M3 6h18"/>
+                  <path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div style="padding:46px 24px 30px;flex:1;display:flex;flex-direction:column;">
+            <h3 style="font-size:20px;font-weight:800;color:#0f172a;margin-bottom:14px;font-family:'Lora',serif;">E-commerce de Moda</h3>
+            <p style="font-size:14px;color:#64748b;line-height:1.6;margin-bottom:28px;flex:1;">Estrategia de publicidad y optimización que incrementó las ventas en un 145% durante cuatro meses.</p>
+            
+            <div style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1.5px solid #fde68a;border-radius:24px;background:#fffbeb;color:#d97706;font-size:13px;font-weight:800;width:fit-content;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+              +145% Ventas
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2: Clínica -->
+        <div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.04);border:1px solid #f1f5f9;display:flex;flex-direction:column;transition:transform .2s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="position:relative;height:240px;background:#e2e8f0;border-bottom:1px solid #f1f5f9;">
+            <!-- Dummy Image for now, user can change -->
+            <img src="images/operaciones.png" style="width:100%;height:100%;object-fit:cover;" alt="Clínica Odontológica">
+            <div style="position:absolute;bottom:-28px;left:24px;width:56px;height:56px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+              <div style="width:46px;height:46px;border-radius:50%;border:1.5px solid #fde68a;display:flex;align-items:center;justify-content:center;background:#fffbeb;">
+                <!-- Tooth icon -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 3C4 3 2 6 2 9c0 3 1.5 5.5 3 7.5 1 1.5 1 3.5 1 5h3c0-2 1-3 3-3s3 1 3 3h3c0-1.5 0-3.5 1-5 1.5-2 3-4.5 3-7.5 0-3-2-6-5-6-1.5 0-3 1-4 2-1-1-2.5-2-4-2z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div style="padding:46px 24px 30px;flex:1;display:flex;flex-direction:column;">
+            <h3 style="font-size:20px;font-weight:800;color:#0f172a;margin-bottom:14px;font-family:'Lora',serif;">Clínica Odontológica</h3>
+            <p style="font-size:14px;color:#64748b;line-height:1.6;margin-bottom:28px;flex:1;">Campañas digitales que aumentaron en 80% las citas agendadas y redujeron el costo por lead.</p>
+            
+            <div style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1.5px solid #fde68a;border-radius:24px;background:#fffbeb;color:#d97706;font-size:13px;font-weight:800;width:fit-content;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              +80% Citas
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3: Inmobiliaria -->
+        <div style="background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.04);border:1px solid #f1f5f9;display:flex;flex-direction:column;transition:transform .2s;" onmouseover="this.style.transform='translateY(-6px)'" onmouseout="this.style.transform='translateY(0)'">
+          <div style="position:relative;height:240px;background:#e2e8f0;border-bottom:1px solid #f1f5f9;">
+            <!-- Dummy Image for now, user can change -->
+            <img src="images/finanzas.png" style="width:100%;height:100%;object-fit:cover;" alt="Inmobiliaria">
+            <div style="position:absolute;bottom:-28px;left:24px;width:56px;height:56px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 10px rgba(0,0,0,0.08);">
+              <div style="width:46px;height:46px;border-radius:50%;border:1.5px solid #fde68a;display:flex;align-items:center;justify-content:center;background:#fffbeb;">
+                <!-- House icon -->
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div style="padding:46px 24px 30px;flex:1;display:flex;flex-direction:column;">
+            <h3 style="font-size:20px;font-weight:800;color:#0f172a;margin-bottom:14px;font-family:'Lora',serif;">Inmobiliaria</h3>
+            <p style="font-size:14px;color:#64748b;line-height:1.6;margin-bottom:28px;flex:1;">Generación de leads calificados y mejora del posicionamiento digital de la marca.</p>
+            
+            <div style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1.5px solid #fde68a;border-radius:24px;background:#fffbeb;color:#d97706;font-size:13px;font-weight:800;width:fit-content;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              +120% Leads
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <div class="ia-cta-banner">
+    <div class="ia-cta-left">
+      <div class="ia-cta-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </div>
+      <div class="ia-cta-text">
+        <h3>¿Listo para aplicar inteligencia artificial en tu empresa?</h3>
+        <p>Cuéntanos tu desafío y te ayudaremos a convertir tus datos en valor.</p>
+      </div>
+    </div>
+    <a href="index.html#contacto" class="ia-cta-btn">
+      Hablemos de tu proyecto
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </div>
+
+<!-- Lightbox Modal -->
+<div id="ia-image-modal" class="ia-modal">
+  <span class="ia-modal-close" onclick="closeModal()">&times;</span>
+  <img class="ia-modal-content" id="ia-modal-img">
+</div>
+
+<script>
+  function openModal(imgSrc) {
+    const modal = document.getElementById("ia-image-modal");
+    const modalImg = document.getElementById("ia-modal-img");
+    modalImg.src = imgSrc;
+    modal.classList.add("show");
+  }
+  function closeModal() {
+    const modal = document.getElementById("ia-image-modal");
+    modal.classList.remove("show");
+  }
+  document.getElementById("ia-image-modal").addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeModal();
+    }
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // 1. Select elements to animate
+    const elementsToAnimate = document.querySelectorAll(`
+      .ia-hero-text h1, .ia-hero-text p, .ia-hero-btns,
+      .ia-section-title, .ia-section-tag, .ia-section-desc,
+      .ia-ben-card, .ia-sol-card, .ia-process-card, .ia-tool-card, .ia-case-card,
+      .ia-cta-banner, .ia-process-footer, .ia-tools-footer, .ia-tools-title, .ia-process-header
+    `);
+    
+    // 2. Add base animation class
+    elementsToAnimate.forEach(el => {
+      el.classList.add('ia-animate');
+    });
+
+    // 3. Add staggered delays for grid children
+    const grids = document.querySelectorAll('.ia-benefits-grid, .ia-solutions-grid, .ia-process-grid, .ia-tools-grid, .ia-cases-grid');
+    grids.forEach(grid => {
+      Array.from(grid.children).forEach((child, index) => {
+        // Max delay 5 to avoid long waiting times
+        const delayClass = 'ia-animate-delay-' + (Math.min(index + 1, 5));
+        if (child.classList.contains('ia-animate')) {
+          child.classList.add(delayClass);
+        }
+      });
+    });
+
+    // 4. Setup Intersection Observer
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('ia-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // 5. Observe elements
+    elementsToAnimate.forEach(el => observer.observe(el));
+  });
+</script>
+
+</body>
+</html>
